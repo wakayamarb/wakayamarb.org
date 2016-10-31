@@ -41,4 +41,5 @@ style.css
 style.min.css
 fonts/
 maps/
+bundle.js
 *.tar.gz

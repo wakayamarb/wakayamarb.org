@@ -6,12 +6,18 @@ import sass        from 'gulp-sass'
 import concat      from 'gulp-concat'
 import minify      from 'gulp-clean-css'
 import rename      from 'gulp-rename'
+import browserify  from 'browserify'
+import babelify    from 'babelify'
+import source      from 'vinyl-source-stream'
 import browserSync from 'browser-sync'
 
 const styles = [
   './node_modules/bootstrap/dist/css/bootstrap.css',
   './node_modules/font-awesome/css/font-awesome.css',
   './src/*.scss'
+]
+
+const scripts = [
 ]
 
 gulp.task('css', () => {
@@ -26,6 +32,14 @@ gulp.task('css', () => {
     .pipe(gulp.dest('./'))
 })
 
+gulp.task('js', () => {
+  browserify({ entries: scripts })
+    .transform([babelify])
+    .bundle()
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('./'))
+})
+
 gulp.task('font', () => {
   gulp.src('./node_modules/font-awesome/fonts/*')
     .pipe(gulp.dest('./fonts/'))
@@ -36,8 +50,9 @@ gulp.task('serve', ['build'], () => {
     server: { baseDir: './' }
   })
   gulp.watch(styles, ['css'])
-  gulp.watch(['./index.html', './style.min.css'])
+  gulp.watch(scripts, ['js'])
+  gulp.watch(['./index.html', './style.min.css', './bundle.js'])
     .on('change', browserSync.reload)
 })
 
-gulp.task('build', ['css', 'font'])
+gulp.task('build', ['css', 'js', 'font'])
