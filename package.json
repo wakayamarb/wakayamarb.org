@@ -7,7 +7,8 @@
     "build": "gulp build --verbose",
     "lint": "sass-lint",
     "serve": "gulp serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "",
+    "build-production": "bash ./bin/build-production.sh"
   },
   "repository": {
     "type": "git",
