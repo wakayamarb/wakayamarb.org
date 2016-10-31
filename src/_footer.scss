@@ -1,7 +1,9 @@
 .footer {
-  background-color: $color-header-text;
+  background-color: $color-text-primary;
 }
 
 .footer-text {
+  margin: 1em;
+  color: $color-background;
   font-size: 1em;
 }
