@@ -1,9 +1,10 @@
 .header {
   position: relative;
   height: 600px;
-  background-color: $color-header-background;
-  // background-image: url('./images/header.jpg');
-  // background-position: center center;
+  // background-color: $color-header-background;
+  background-attachment: fixed;
+  background-image: url('./images/header.jpg');
+  background-position: top center;
   -webkit-box-shadow: 0 0 10px 10px rgba(20, 20, 20, 0.2) inset;
   -moz-box-shadow: 0 0 10px 10px rgba(20, 20, 20, 0.2) inset;
   box-shadow: 0 0 10px 10px rgba(20, 20, 20, 0.2) inset;
@@ -32,7 +33,14 @@
   border-radius: $radius-default;
 
   color: $color-header-text;
-
+  text-shadow: 1px 1px 4px rgba(20, 20, 20, 0.6);
   text-transform: uppercase;
+
+  box-shadow: 1px 1px 4px rgba(20, 20, 20, 0.6);
+
+  @media (max-width: 480px) {
+    border-width: 4px;
+    font-size: 1.5em;
+  }
 
 }
