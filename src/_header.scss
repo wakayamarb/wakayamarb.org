@@ -1,0 +1,38 @@
+.header {
+  position: relative;
+  height: 600px;
+  background-color: $color-header-background;
+  // background-image: url('./images/header.jpg');
+  // background-position: center center;
+  -webkit-box-shadow: 0 0 10px 10px rgba(20, 20, 20, 0.2) inset;
+  -moz-box-shadow: 0 0 10px 10px rgba(20, 20, 20, 0.2) inset;
+  box-shadow: 0 0 10px 10px rgba(20, 20, 20, 0.2) inset;
+
+  .title .capital {
+    font-size: 1.2em;
+    letter-spacing: -5px;
+  }
+}
+
+.title {
+
+  display: table;
+  position: absolute;
+
+  top: 45%;
+  left: 50%;
+  padding: .2em 1em;
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+
+  border: 6px solid $color-header-text;
+  border-radius: $radius-default;
+
+  color: $color-header-text;
+
+  text-transform: uppercase;
+
+}

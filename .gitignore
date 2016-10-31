@@ -39,4 +39,5 @@ jspm_packages
 # build package
 style.css
 style.min.css
-maps
+fonts/
+maps/

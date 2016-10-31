@@ -1,0 +1,29 @@
+.product-inner {
+  margin: auto;
+  padding: 1em;
+
+  .function-list {
+    padding-left: 1em;
+  }
+}
+
+.product-title {
+  margin-bottom: 2em;
+}
+
+.product-image {
+  width: 100%;
+  margin: auto;
+
+  -webkit-filter: opacity(90%);
+  filter: opacity(90%);
+
+  &:hover {
+    -webkit-filter: opacity(100%);
+    filter: opacity(100%);
+  }
+}
+
+.product-description {
+  margin: 1em;
+}

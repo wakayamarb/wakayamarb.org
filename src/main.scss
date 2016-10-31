@@ -1,6 +1,60 @@
-@import '_variables'
-@import '_typography'
+@import 'variables';
+@import 'header';
+@import 'products';
+@import 'footer';
+@import 'navigation';
 
-body, html {
-  font-family: Raleway;
+body,
+html {
+  background-color: $color-background;
+  color: $color-text-primary;
+  font-family:
+  'Raleway',
+  'HelveticaNeue',
+  'Helvetica Neue',
+  'Helvetica',
+  'Arial',
+  '游ゴシック体',
+  'Yu Gothic',
+  'YuGothic',
+  'ヒラギノ角ゴシック Pro',
+  'Hiragino Kaku Gothic Pro',
+  'メイリオ',
+  'Meiryo',
+  'Osaka',
+  'MS Pゴシック',
+  'MS PGothic',
+  'sans-serif';
+  font-size: $font-size-base;
+}
+
+.section {
+
+  &:first-child {
+    margin-top: 4em;
+  }
+
+  margin-top: 8em;
+
+  margin-bottom: 8em;
+
+  &:last-child {
+    margin-bottom: 4em;
+  }
+}
+
+.section-content {
+  margin-top: 2em;
+  padding: 0 2em;
+}
+
+.section-banar-image {
+  width: 100%;
+  max-width: 480px;
+  padding: .5em;
+  border-radius: $radius-default;
+
+  -webkit-box-shadow: 0 0 2px 2px rgba(120, 120, 120, 0.2);
+  -moz-box-shadow: 0 0 2px 2px rgba(120, 120, 120, 0.2);
+  box-shadow: 0 0 2px 2px rgba(120, 120, 120, 0.2);
 }

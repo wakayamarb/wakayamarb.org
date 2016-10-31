@@ -1,0 +1,39 @@
+.primary-nav {
+  margin: 4em auto 0;
+}
+
+.primary-nav-list,
+.sns-list {
+  padding: 0;
+  list-style: none;
+}
+
+.sns-list-item {
+  display: inline-block;
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav-circle {
+  display: block;
+  position: relative;
+  width: $circle-button-radius;
+  height: $circle-button-radius;
+  margin: 2em auto;
+  border-radius: $circle-button-radius / 2;
+  background-color: $color-header-text;
+  color: $color-background;
+
+  .nav-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
