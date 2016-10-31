@@ -4,10 +4,8 @@
   // background-color: $color-header-background;
   background-attachment: fixed;
   background-image: url('./images/header.jpg');
+  background-repeat: no-repeat;
   background-position: top center;
-  -webkit-box-shadow: 0 0 10px 10px rgba(20, 20, 20, 0.2) inset;
-  -moz-box-shadow: 0 0 10px 10px rgba(20, 20, 20, 0.2) inset;
-  box-shadow: 0 0 10px 10px rgba(20, 20, 20, 0.2) inset;
 
   .title .capital {
     font-size: 1.2em;
