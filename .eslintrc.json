@@ -1,0 +1,28 @@
+{
+    "env": {
+        "node": true,
+        "es6": true,
+        "mocha": true,
+        "browser": true,
+        "protractor": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "arrow-spacing": ["error", { "before": true, "after": true }],
+        "no-dupe-args": ["error"],
+        "no-console":0,
+        "no-const-assign": ["error"],
+        "no-unused-vars": ["warn"],
+        "indent": ["error", 2],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "single"],
+        "semi": ["error", "never"]
+    }
+}
