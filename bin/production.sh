@@ -9,4 +9,4 @@ if [[ ! -d $DESTINE ]]; then
     mkdir $DESTINE
 fi
 
-tar cvzf ./wakayamarb.org.tar.gz fonts/ images index.html style.min.css
+tar cvzf ./wakayamarb.org.tar.gz fonts/ images index.html style.min.css bundle.js
