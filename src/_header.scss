@@ -1,8 +1,8 @@
 .header {
   position: relative;
   height: 600px;
-  // background-color: $color-header-background;
   background-attachment: fixed;
+  background-color: $color-header-background;
   background-image: url('./images/header.jpg');
   background-repeat: no-repeat;
   background-position: top center;
@@ -15,7 +15,7 @@
 
 .title {
 
-  display: table;
+  display: block;
   position: absolute;
 
   top: 45%;
@@ -26,15 +26,15 @@
   -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 
-
   border: 6px solid $color-header-text;
   border-radius: $radius-default;
 
   color: $color-header-text;
-  text-shadow: 1px 1px 4px rgba(20, 20, 20, 0.6);
+
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
 
-  box-shadow: 1px 1px 4px rgba(20, 20, 20, 0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 480px) {
     border-width: 4px;
