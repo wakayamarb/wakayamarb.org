@@ -4,7 +4,7 @@ import plumber     from 'gulp-plumber'
 import sourcemaps  from 'gulp-sourcemaps'
 import sass        from 'gulp-sass'
 import concat      from 'gulp-concat'
-import minify      from 'gulp-clean-css'
+// import minify      from 'gulp-clean-css'
 import rename      from 'gulp-rename'
 import browserify  from 'browserify'
 import babelify    from 'babelify'
@@ -14,10 +14,12 @@ import browserSync from 'browser-sync'
 const styles = [
   './node_modules/bootstrap/dist/css/bootstrap.css',
   './node_modules/font-awesome/css/font-awesome.css',
+  './node_modules/highlight.js/styles/default.css',
   './src/*.scss'
 ]
 
 const scripts = [
+  './src/main.js'
 ]
 
 gulp.task('css', () => {
