@@ -1,14 +1,14 @@
 {
   "name": "wakayamarb.org",
   "version": "1.0.0",
-  "description": "Website of wakayama.rb",
+  "description": "Website of Wakayama.rb",
   "main": "index.html",
   "scripts": {
     "build": "gulp build --verbose",
     "lint": "sass-lint",
     "serve": "gulp serve",
-    "test": "",
-    "build-production": "bash ./bin/build-production.sh"
+    "test": "ls ./style.min.css",
+    "build:production": "bash ./bin/production.sh"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   },
   "keywords": [
     "wakayama",
+    "community",
     "ruby",
     "ruby on rails"
   ],
