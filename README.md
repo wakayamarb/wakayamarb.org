@@ -19,3 +19,9 @@ $ scp ./wakayamarb.org.tar.gz {{user}}@wakayamarb.org:{{port}}/path/to/html/publ
 $ cd /path/to/html/public
 $ tar xvzf wakayamarb.org.tar.gz
 ```
+
+# gh-pages deploy key reset (for commiters)
+
+Run `$ npm run keygen`.
+Then remove old key and add new one from here.
+https://github.com/wakayamarb/wakayamarb.org/settings/keys
