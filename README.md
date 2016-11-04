@@ -13,7 +13,7 @@ $ npm run serve
 # deployment
 
 ```
-$ npm run build:production
+$ npm run production
 $ scp ./wakayamarb.org.tar.gz {{user}}@wakayamarb.org:{{port}}/path/to/html/public
 $ cd /path/to/html/public
 $ tar xvzf wakayamarb.org.tar.gz
