@@ -8,6 +8,7 @@
     "lint": "sass-lint && eslint ./src/*.js",
     "serve": "gulp serve",
     "test": "ls ./style.min.css",
+    "keygen": "ssh-keygen -t ecdsa -f ./id_ecdsa -q -N \"\" && travis encrypt-file ./id_ecdsa",
     "production": "bash ./bin/production.sh"
   },
   "repository": {

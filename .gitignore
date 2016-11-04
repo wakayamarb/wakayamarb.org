@@ -44,5 +44,4 @@ bundle.js
 *.tar.gz
 
 # deploy key
-id_rsa
-id_rsa.pub
+id_ecdsa
