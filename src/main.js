@@ -1,6 +1,6 @@
 'use strict'
 
-import hljs from 'highlight.js'
+import { initHighlightingOnLoad as hilight } from 'highlight.js'
 
-// enable hilightening
-hljs.initHighlightingOnLoad()
+// enable code hilightening
+hilight()

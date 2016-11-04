@@ -19,11 +19,14 @@ $font-family-base:
 'MS PGothic',
 'sans-serif';
 
-
 // Colors
 $color-primary: lighten(orange, 25%);
 $color-secondary: rgb(80, 120, 60);
 $color-background: white;
+
+// breakpoints
+$breakpoint-xxs: 480px;
+$breakpoint-bootstrap-xs: 768px;
 
 // header
 $header-height: 600px;

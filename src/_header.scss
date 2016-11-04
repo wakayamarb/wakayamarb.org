@@ -19,7 +19,7 @@
     text-transform: uppercase;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
-    @media (max-width: 480px) {
+    @media (max-width: $breakpoint-xxs) {
       border-width: $header-title-border-width-sp;
       font-size: 1.5em;
     }
