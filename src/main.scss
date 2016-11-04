@@ -11,22 +11,7 @@ body,
 html {
   background-color: $color-background;
   color: $color-secondary;
-  font-family:
-  'Raleway',
-  'HelveticaNeue',
-  'Helvetica Neue',
-  'Helvetica',
-  'Arial',
-  '游ゴシック体',
-  'Yu Gothic',
-  'YuGothic',
-  'ヒラギノ角ゴシック Pro',
-  'Hiragino Kaku Gothic Pro',
-  'メイリオ',
-  'Meiryo',
-  'Osaka',
-  'MS Pゴシック',
-  'MS PGothic',
-  'sans-serif';
+  font-family: $font-family-base;
   font-size: $font-size-base;
+  line-height: $line-height-base;
 }
