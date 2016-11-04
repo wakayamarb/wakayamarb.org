@@ -19,6 +19,7 @@ echo 'Deploying to GitHub page brnch..'
 
 GITHUB_BRANCH_TO_DEPLOY=$1
 
+ls -la ~/.ssh/
 rm -rf .git/
 git init
 git config --global user.name "wakayamarb"
