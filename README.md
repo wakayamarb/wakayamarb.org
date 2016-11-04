@@ -1,4 +1,5 @@
 # wakayamarb.org
+[![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org)
 
 http://wakayamarb.org
 
