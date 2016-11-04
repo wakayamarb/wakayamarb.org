@@ -17,18 +17,18 @@ script:
 - npm run lint
 
 after_success:
-- echo 'bin/'              > .gitignore
-- echo 'maps/'             >> .gitignore
-- echo 'node_modules/'     >> .gitignore
-- echo 'src/'              >> .gitignore
-- echo '.babelrc'          >> .gitignore
-- echo '.editorconfig'     >> .gitignore
-- echo '.eslingignore'     >> .gitignore
-- echo '.eslintrc.json'    >> .gitignore
-- echo 'sass-lint.yml'     >> .gitignore
-- echo '.travis.yml'       >> .gitignore
-- echo 'gulpfile.babel.js' >> .gitignore
-- echo 'id_ecdsa.enc'      >> .gitignore
-- echo 'id_ecdsa.pub'      >> .gitignore
-- echo 'package.json'      >> .gitignore
+- echo 'bin/' > .gitignore
+- rm -rf 'maps/'
+- rm -rf 'node_modules/'
+- rm -rf 'src/'
+- rm '.babelrc'
+- rm '.editorconfig'
+- rm '.eslintignore'
+- rm '.eslintrc.json'
+- rm '.sass-lint.yml'
+- rm '.travis.yml'
+- rm 'gulpfile.babel.js'
+- rm 'id_ecdsa.enc'
+- rm 'id_ecdsa.pub'
+- rm 'package.json'
 - bash ./bin/deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
