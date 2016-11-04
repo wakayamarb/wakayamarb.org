@@ -28,7 +28,7 @@ after_success:
 - echo 'sass-lint.yml'     >> .gitignore
 - echo '.travis.yml'       >> .gitignore
 - echo 'gulpfile.babel.js' >> .gitignore
-- echo 'id_rsa.enc'        >> .gitignore
-- echo 'id_rsa.pub'        >> .gitignore
+- echo 'id_ecdsa.enc'      >> .gitignore
+- echo 'id_ecdsa.pub'      >> .gitignore
 - echo 'package.json'      >> .gitignore
 - bash ./bin/deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
