@@ -1,9 +1,9 @@
 .footer {
   background-color: lighten($color-secondary, 20%);
-}
 
-.footer-text {
-  margin: 1em;
-  color: $color-background;
-  font-size: 1em;
+  .footer-text {
+    margin: 1em 0;
+    color: $color-background;
+    font-size: 1em;
+  }
 }

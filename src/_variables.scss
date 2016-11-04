@@ -1,18 +1,23 @@
+// typography
 $font-size-base: 16px;
 
+// Colors
 $color-primary: lighten(orange, 25%);
 $color-secondary: rgb(80, 120, 60);
-// $color-emphasize: darken(red, 30%);
 $color-background: white;
 
 // header
 $header-height: 600px;
+$header-image-path: './images/header.jpg';
+$header-title-border-width-pc: 4px;
+$header-title-border-width-sp: 2px;
 
 // sectioning
 $setion-margin-unit: 4em;
 
 // iconic separator
-$circle-button-radius: 80px;
+$circle-icon-radius: 80px;
+$circle-icon-margin: 2em;
 
 // default radius for rectangle elements
 $radius-default: 3px;

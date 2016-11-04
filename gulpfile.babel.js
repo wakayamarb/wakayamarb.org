@@ -11,10 +11,12 @@ import babelify    from 'babelify'
 import source      from 'vinyl-source-stream'
 import browserSync from 'browser-sync'
 
+const hilightJsStyle = 'default'
+
 const styles = [
   './node_modules/bootstrap/dist/css/bootstrap.css',
   './node_modules/font-awesome/css/font-awesome.css',
-  './node_modules/highlight.js/styles/default.css',
+  `./node_modules/highlight.js/styles/${hilightJsStyle}.css`,
   './src/*.scss'
 ]
 
