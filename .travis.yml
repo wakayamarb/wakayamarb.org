@@ -1,10 +1,9 @@
 language: node_js
+
 node_js:
+- '4'
+- '5'
 - '6'
-notifications:
-  email:
-    on_success: never
-    on_failure: change
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_05591fa2c311_key -iv $encrypted_05591fa2c311_iv -in id_ecdsa.enc -out ~/.ssh/id_ecdsa -d
@@ -17,14 +16,18 @@ script:
 - npm run lint
 
 after_success:
-- echo 'Removing unnecessary files..'
-- rm -rf bin/
-- rm -rf maps/
-- rm -rf node_modules/
-- rm -rf src/
-- rm .*
-- rm gulpfile.babel.js
-- rm id_rsa.enc
-- rm id_rsa.pub
-- rm package.json
-- bash ./bin/deploy.sh
+- echo 'bin/'              > .gitignore
+- echo 'maps/'             >> .gitignore
+- echo 'node_modules/'     >> .gitignore
+- echo 'src/'              >> .gitignore
+- echo '.babelrc'          >> .gitignore
+- echo '.editorconfig'     >> .gitignore
+- echo '.eslingignore'     >> .gitignore
+- echo '.eslintrc.json'    >> .gitignore
+- echo 'sass-lint.yml'     >> .gitignore
+- echo '.travis.yml'       >> .gitignore
+- echo 'gulpfile.babel.js' >> .gitignore
+- echo 'id_rsa.enc'        >> .gitignore
+- echo 'id_rsa.pub'        >> .gitignore
+- echo 'package.json'      >> .gitignore
+- bash ./bin/deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
