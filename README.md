@@ -4,7 +4,7 @@
 http://wakayamarb.org
 
 # development
-
+requires >=Node.js: 4
 ```
 $ git clone https://github.com/wakayamarb/wakayamarb.org.git
 $ npm install
