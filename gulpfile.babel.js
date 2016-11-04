@@ -7,27 +7,21 @@ import minify       from 'gulp-clean-css'
 import plumber      from 'gulp-plumber'
 import sass         from 'gulp-sass'
 import sourcemaps   from 'gulp-sourcemaps'
+import uglify       from 'gulp-uglify'
 import browserify   from 'browserify'
 import babelify     from 'babelify'
 import streamqueue  from 'streamqueue'
 import source       from 'vinyl-source-stream'
+import buffer       from 'vinyl-buffer'
 import browserSync  from 'browser-sync'
 
-const hilightJsStyle = 'default'
+const styles    = ['./src/*.scss']
+const scripts   = ['./src/main.js']
 
 const bootstrap = ['./src/bootstrap-custom.less']
-
-const styles = [
-  './src/*.scss'
-]
-
 const externalStyles = [
   './node_modules/font-awesome/css/font-awesome.css',
-  `./node_modules/highlight.js/styles/${hilightJsStyle}.css`
-]
-
-const scripts = [
-  './src/main.js'
+  './node_modules/highlight.js/styles/default.css'
 ]
 
 gulp.task('css', () => {
@@ -64,6 +58,8 @@ gulp.task('js', () => {
     .transform([babelify])
     .bundle()
     .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(uglify({ preserveComments: 'some' }))
     .pipe(gulp.dest('./'))
 })
 
@@ -71,6 +67,8 @@ gulp.task('font', () => {
   gulp.src('./node_modules/font-awesome/fonts/*')
     .pipe(gulp.dest('./fonts/'))
 })
+
+gulp.task('build', ['css', 'js', 'font'])
 
 gulp.task('serve', ['build'], () => {
   browserSync.init({
@@ -82,5 +80,3 @@ gulp.task('serve', ['build'], () => {
   gulp.watch(['./index.html', './style.css', './bundle.js'])
     .on('change', browserSync.reload)
 })
-
-gulp.task('build', ['css', 'js', 'font'])
