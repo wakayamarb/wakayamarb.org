@@ -36,6 +36,7 @@ after_success:
 - git config user.name "kamataryo"
 - git config user.email "kamataryo@travis-ci.org"
 - git remote add origin git@github.com:wakayamarb/wakayamarb.org.git
+- git checkout -b gh-pages
 - git add .
 - git commit -m"Deploy from travis"
 - git push --force origin gh-pages
