@@ -13,6 +13,7 @@ branches:
 before_install:
 - openssl aes-256-cbc -K $encrypted_05591fa2c311_key -iv $encrypted_05591fa2c311_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh.id_rsa
 
 before_script:
 - npm run build
@@ -34,7 +35,7 @@ after_success:
 - git init
 - git config user.name "kamataryo"
 - git config user.email "kamataryo@travis-ci.org"
-- git remote add origin git@github.com:${TRAVIS_REPO_SLUG}.git
+- git remote add origin git@github.com:wakayamarb/wakayamarb.org.git
 - git add .
 - git commit -m"Deploy from travis"
 - git push --force origin gh-pages
