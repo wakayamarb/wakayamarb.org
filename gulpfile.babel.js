@@ -1,23 +1,29 @@
 'use strict'
-import gulp        from 'gulp'
-import plumber     from 'gulp-plumber'
-import sourcemaps  from 'gulp-sourcemaps'
-import sass        from 'gulp-sass'
-import concat      from 'gulp-concat'
-// import minify      from 'gulp-clean-css'
-import rename      from 'gulp-rename'
-import browserify  from 'browserify'
-import babelify    from 'babelify'
-import source      from 'vinyl-source-stream'
-import browserSync from 'browser-sync'
+import gulp         from 'gulp'
+import autoprefixer from 'gulp-autoprefixer'
+import concat       from 'gulp-concat'
+import less         from 'gulp-less'
+import minify       from 'gulp-clean-css'
+import plumber      from 'gulp-plumber'
+import sass         from 'gulp-sass'
+import sourcemaps   from 'gulp-sourcemaps'
+import browserify   from 'browserify'
+import babelify     from 'babelify'
+import streamqueue  from 'streamqueue'
+import source       from 'vinyl-source-stream'
+import browserSync  from 'browser-sync'
 
 const hilightJsStyle = 'default'
 
+const bootstrap = ['./src/bootstrap-custom.less']
+
 const styles = [
-  './node_modules/bootstrap/dist/css/bootstrap.css',
-  './node_modules/font-awesome/css/font-awesome.css',
-  `./node_modules/highlight.js/styles/${hilightJsStyle}.css`,
   './src/*.scss'
+]
+
+const externalStyles = [
+  './node_modules/font-awesome/css/font-awesome.css',
+  `./node_modules/highlight.js/styles/${hilightJsStyle}.css`
 ]
 
 const scripts = [
@@ -25,13 +31,30 @@ const scripts = [
 ]
 
 gulp.task('css', () => {
-  gulp.src(styles)
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(sass())
+
+  streamqueue(
+    { objectMode: true },
+    // bootstrap custom
+    gulp.src(bootstrap)
+      .pipe(plumber())
+      .pipe(sourcemaps.init())
+      .pipe(less({ paths: ['./node_modules/bootstrap/less/'] })),
+
+    gulp.src(styles)
+      .pipe(plumber())
+      .pipe(sourcemaps.init())
+      .pipe(sass()),
+
+      gulp.src(externalStyles)
+      .pipe(plumber())
+      .pipe(sourcemaps.init())
+  )
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(concat('style.css'))
-    // .pipe(minify())
-    .pipe(rename((file) => { file.extname = '.min.css' }))
+    .pipe(minify())
     .pipe(sourcemaps.write('./maps/'))
     .pipe(gulp.dest('./'))
 })
@@ -53,9 +76,10 @@ gulp.task('serve', ['build'], () => {
   browserSync.init({
     server: { baseDir: './' }
   })
+  gulp.watch(bootstrap, ['css'])
   gulp.watch(styles, ['css'])
   gulp.watch(scripts, ['js'])
-  gulp.watch(['./index.html', './style.min.css', './bundle.js'])
+  gulp.watch(['./index.html', './style.css', './bundle.js'])
     .on('change', browserSync.reload)
 })
 
