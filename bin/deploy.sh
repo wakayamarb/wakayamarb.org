@@ -8,7 +8,7 @@ if [[ $2 != "$3" ]]; then
   echo "Not suitable to deploy. $2 expected to be $3."
 fi
 
-if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then
+if [[ $TRAVIS_PULL_REQUEST == "true" ]]; then
   echo 'Not deploying from Pull Request.'
   exit 0
 fi
