@@ -31,4 +31,4 @@ after_success:
 - echo 'id_rsa.enc'        >> .gitignore
 - echo 'id_rsa.pub'        >> .gitignore
 - echo 'package.json'      >> .gitignore
-- bash ./bin/deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
+- bash ./bin/deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "7"
