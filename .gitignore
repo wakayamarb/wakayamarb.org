@@ -38,7 +38,6 @@ jspm_packages
 
 # build package
 style.css
-style.min.css
 fonts/
 maps/
 bundle.js
