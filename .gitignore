@@ -45,3 +45,4 @@ bundle.js
 
 # deploy key
 id_ecdsa
+id_rsa
