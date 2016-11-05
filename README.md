@@ -18,7 +18,6 @@ $ npm run serve
 [CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/) works on code linting.
 [Travis CI](ttps://travis-ci.org/wakayamarb/wakayamarb.org) works on deployment to gh-pages (and production, in future).
 
-
 # production deployment
 
 ```
