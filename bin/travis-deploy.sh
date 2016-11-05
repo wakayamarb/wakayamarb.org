@@ -26,5 +26,5 @@ git config --global user.email "$USER@travis-ci.org"
 git remote add origin "git@github.com:$TRAVIS_REPO_SLUG.git"
 git checkout -b $GITHUB_BRANCH_TO_DEPLOY
 git add .
-git commit -m "Deploy from travis"
+git commit -m "Deploy from travis [ci skip]"
 git push --force origin $GITHUB_BRANCH_TO_DEPLOY
