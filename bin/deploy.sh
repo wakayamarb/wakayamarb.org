@@ -14,7 +14,7 @@ fi
 #   echo 'Not deploying from Pull Request.'
 #   exit 0
 # fi
-cat ./id_ecdsa
+cat ~/.ssh/id_ecdsa
 echo 'Deploying to GitHub page brnch..'
 
 GITHUB_BRANCH_TO_DEPLOY=$1
