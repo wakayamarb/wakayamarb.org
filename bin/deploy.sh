@@ -23,7 +23,7 @@ rm -rf .git/
 git init
 git config --global user.name $USER
 git config --global user.email "$USER@travis-ci.org"
-git remote add origin "git@github.com:$TRAVIS_REPO_SLUG.org.git"
+git remote add origin "git@github.com:$TRAVIS_REPO_SLUG.git"
 git checkout -b $GITHUB_BRANCH_TO_DEPLOY
 git add .
 git commit -m "Deploy from travis"
