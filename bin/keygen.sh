@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# generate new key pairs for deployment
+
 echo 'Are you sure that this command rests deploy key? [y/N]'
 read RESET
 if [[ $RESET != 'y' ]]; then

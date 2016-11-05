@@ -121,22 +121,25 @@
         <p class="nav-circle text-center">
           <i class="nav-icon fa fa-code fa-2x" aria-hidden="true"></i>
         </p>
-        <p class="description text-center">GR-CITRUSとWA-MIKANのサンプルコードです。<br /><a href="https://github.com/wakayamarb/wrbb-v2lib-firm/tree/master/sample/GR-CITRUS">その他のサンプルコード</a></p>
+        <p class="description text-center">
+          GR-CITRUSとWA-MIKANのサンプルコードです。<br />
+          <a href="https://github.com/wakayamarb/wrbb-v2lib-firm/tree/master/sample/GR-CITRUS">その他のサンプルコード</a>
+        </p>
 
         <div class="row">
 
           <div class="col-xs-12 col-sm-6">
             <h3 class="text-center">Hello World</h3>
 <pre><code class="ruby">#!mruby
-  Usb = Serial.new(0)
-  k = 1
-  8.times do |n|
-      led k
-      k = 1 - k
-      Usb.println "#{k.to_s}:Hello World! at #{System.getMrbPath}"
-      delay 500
-  end
-  led 0</code></pre><!--.code-ruby-->
+Usb = Serial.new(0)
+k = 1
+8.times do |n|
+    led k
+    k = 1 - k
+    Usb.println "#{k.to_s}:Hello World! at #{System.getMrbPath}"
+    delay 500
+end
+led 0</code></pre><!--.code-ruby-->
           </div><!--.col-->
 
           <div class="col-xs-12 col-sm-6">
@@ -150,8 +153,7 @@
 end</code></pre><!--.code-ruby-->
           </div><!--.col-->
 
-      </div><!--.row-->
-
+        </div><!--.row-->
 
       </section><!--#sample-codes-->
 
