@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# create tarball of production code files
+
 DESTINE="./dest/"
 
 npm install

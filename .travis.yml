@@ -18,6 +18,7 @@ before_script:
 - npm run build
 
 script:
+- echo 'eliminating unnecessary files..'
 - echo 'bin/' > .gitignore
 - rm -rf 'maps/'
 - rm -rf 'node_modules/'
@@ -32,4 +33,4 @@ script:
 - rm 'id_ecdsa.enc'
 - rm 'id_ecdsa.pub'
 - rm 'package.json'
-- bash ./bin/deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
+- bash ./bin/travis-deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
