@@ -10,6 +10,7 @@ if [[ $2 != "$3" ]]; then
   exit 0
 fi
 
+echo "TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST"
 if [[ $TRAVIS_PULL_REQUEST == "true" ]]; then
   echo 'Not deploying from Pull Request.'
   exit 0
