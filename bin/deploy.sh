@@ -6,15 +6,15 @@ if [[ $CI != "true" && $TRAVIS != "true" ]]; then
 fi
 
 if [[ $2 != "$3" ]]; then
-  echo "Not suitable to deploy. $2 expected to be $3."
+  echo "Not suitable to deploy. '$2' expected to be '$3'."
   exit 0
 fi
 
-if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
-  echo 'Not deploying from Pull Request.'
-  exit 0
-fi
-
+# if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
+#   echo 'Not deploying from Pull Request.'
+#   exit 0
+# fi
+cat ./id_ecdsa
 echo 'Deploying to GitHub page brnch..'
 
 GITHUB_BRANCH_TO_DEPLOY=$1
