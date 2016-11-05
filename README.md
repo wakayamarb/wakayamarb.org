@@ -1,8 +1,7 @@
 # wakayamarb.org
 
-|Lint & Tests|Deployment|
-|:-----------:|:------------:|
-|[![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg?style=shield)](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master)|[![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org)|
+[![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg?style=shield)](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master) [![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org)
+
 
 http://wakayamarb.org
 
@@ -15,6 +14,10 @@ $ git clone https://github.com/wakayamarb/wakayamarb.org.git
 $ npm install
 $ npm run serve
 ```
+
+[CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/) works on code linting.
+[Travis CI](ttps://travis-ci.org/wakayamarb/wakayamarb.org) works on deployment to gh-pages (and production, in future).
+
 
 # production deployment
 
