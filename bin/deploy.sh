@@ -10,11 +10,11 @@ if [[ $2 != "$3" ]]; then
   exit 0
 fi
 
-# if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
-#   echo 'Not deploying from Pull Request.'
-#   exit 0
-# fi
-cat ~/.ssh/id_ecdsa
+if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
+  echo 'Not deploying from Pull Request.'
+  exit 0
+fi
+
 echo 'Deploying to GitHub page brnch..'
 
 GITHUB_BRANCH_TO_DEPLOY=$1
