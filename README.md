@@ -1,10 +1,13 @@
 # wakayamarb.org
-[![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org)
+
+[![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg?style=shield)](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master) [![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org)
+
 
 http://wakayamarb.org
 
+
 # development
-requires >=Node.js: 4
+OK >=Node.js: 4
 
 ```
 $ git clone https://github.com/wakayamarb/wakayamarb.org.git
@@ -12,7 +15,11 @@ $ npm install
 $ npm run serve
 ```
 
-# deployment
+[CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/) works on code linting.
+[Travis CI](ttps://travis-ci.org/wakayamarb/wakayamarb.org) works on deployment to gh-pages (and production, in future).
+
+
+# production deployment
 
 ```
 $ npm run production
@@ -21,7 +28,7 @@ $ cd /path/to/html/public
 $ tar xvzf wakayamarb.org.tar.gz
 ```
 
-# gh-pages deploy key reset (for commiters)
+# deploy key reset (for commiters)
 
 Run `$ npm run keygen`.
 Then remove old key and add new one from here.
