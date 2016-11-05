@@ -1,7 +1,8 @@
-# general:
-#   branches:
-#     ignore:
-#       - gh-pages
+general:
+  branches:
+    ignore:
+      - gh-pages
+
 test:
   pre:
     - npm run lint

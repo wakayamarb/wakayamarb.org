@@ -126,16 +126,28 @@
         <div class="row">
 
           <div class="col-xs-12 col-sm-6">
+            <h3 class="text-center">Hello World</h3>
+<pre><code class="ruby">#!mruby
+  Usb = Serial.new(0)
+  k = 1
+  8.times do |n|
+      led k
+      k = 1 - k
+      Usb.println "#{k.to_s}:Hello World! at #{System.getMrbPath}"
+      delay 500
+  end
+  led 0</code></pre><!--.code-ruby-->
+          </div><!--.col-->
+
+          <div class="col-xs-12 col-sm-6">
             <h3 class="text-center">LEDチカチカ</h3>
-
-  <pre><code class="ruby">#!mruby
-  10.times do
-    led 0
-    delay 500
-    led 1
-    delay 500
-  end</code></pre><!--.code-ruby-->
-
+<pre><code class="ruby">#!mruby
+10.times do
+  led 0
+  delay 500
+  led 1
+  delay 500
+end</code></pre><!--.code-ruby-->
           </div><!--.col-->
 
       </div><!--.row-->
