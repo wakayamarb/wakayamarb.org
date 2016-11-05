@@ -152,6 +152,34 @@ end</code></pre><!--.code-ruby-->
 
       </div><!--.row-->
 
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-6">
+            <h3 class="text-center">WiFi HTTP POST</h3>
+<pre><code class="ruby">#!mruby
+#Version 2.16
+header=["User-Agent: gr-citrus", "Accept: application/json", "Content-type: application/json"]
+body = '{ "name" : "tarosan" }'
+
+WiFi.httpPost("192.168.1.52:3000", header, body)
+</code></pre><!--.code-ruby-->
+          </div><!--.col-->
+
+          <div class="col-xs-12 col-sm-6">
+            <h3 class="text-center">WiFi HTTP GET</h3>
+<pre><code class="ruby">#!mruby
+#Version 2.16
+for value in 1..50
+  WiFi.httpGet("192.168.1.58:3000/?query1=" + value.to_s + "&query2=" + (value * value).to_s)
+  delay 100
+end
+header=["User-Agent: curl"]
+WiFi.httpGetSD("wether.htm","wttr.in/wakayama", header)
+
+</code></pre><!--.code-ruby-->
+          </div><!--.col-->
+
+      </div><!--.row-->
 
       </section><!--#sample-codes-->
 
