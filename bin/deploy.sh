@@ -6,25 +6,24 @@ if [[ $CI != "true" && $TRAVIS != "true" ]]; then
 fi
 
 if [[ $2 != "$3" ]]; then
-  echo "Not suitable to deploy. $2 expected to be $3."
+  echo "Not suitable to deploy. '$2' expected to be '$3'."
   exit 0
 fi
 
-echo "TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST"
-if [[ $TRAVIS_PULL_REQUEST == "true" ]]; then
-  echo 'Not deploying from Pull Request.'
-  exit 0
-fi
-
+# if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
+#   echo 'Not deploying from Pull Request.'
+#   exit 0
+# fi
+cat ~/.ssh/id_ecdsa
 echo 'Deploying to GitHub page brnch..'
 
 GITHUB_BRANCH_TO_DEPLOY=$1
 
 rm -rf .git/
 git init
-git config --global user.name "wakayamarb"
-git config --global user.email "wakayamarb@travis-ci.org"
-git remote add origin "git@github.com:wakayamarb/wakayamarb.org.git"
+git config --global user.name $USER
+git config --global user.email "$USER@travis-ci.org"
+git remote add origin "git@github.com:$TRAVIS_REPO_SLUG.org.git"
 git checkout -b $GITHUB_BRANCH_TO_DEPLOY
 git add .
 git commit -m "Deploy from travis"
