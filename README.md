@@ -1,6 +1,6 @@
 # wakayamarb.org
 
-[![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg?style=shield)](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master) [![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org)
+[![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg?style=shield)](https://circleci.com/gh/wakayamarb/wakayamarb.org) [![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org)
 
 Website of local ruby community Wakayama.rb.
 
@@ -52,5 +52,5 @@ $ tar xvzf wakayamarb.org.tar.gz
 
 ## deploy key reset (for commiters)
 
-If you leak the secret key `id_ecdsa`, run `$ npm run keygen` to reset the key pair.
-Then remove old key and add new one at GitHub from [here](https://github.com/wakayamarb/wakayamarb.org/settings/keys).
+If you leak the secret key `id_ecdsa`, run `npm run keygen` to reset the key pair.
+Then replace public key at GitHub from [here](https://github.com/wakayamarb/wakayamarb.org/settings/keys).

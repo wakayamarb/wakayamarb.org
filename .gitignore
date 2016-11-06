@@ -47,3 +47,5 @@ bundle.js
 # deploy key
 id_ecdsa
 id_rsa
+id_ecdsa.pub
+id_rsa.pub
