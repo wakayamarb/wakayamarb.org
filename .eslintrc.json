@@ -2,7 +2,9 @@
     "env": {
         "es6": true,
         "browser": true,
-        "protractor": true
+        "commonjs": true,
+        "protractor": true,
+        "phantomjs": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
