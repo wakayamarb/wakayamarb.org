@@ -11,8 +11,15 @@ OK >=Node.js: 4
 
 ```
 $ git clone https://github.com/wakayamarb/wakayamarb.org.git
+$ cd wakayamarb.org
 $ npm install
 $ npm run start
+```
+
+For key manager
+
+```
+$ gem install travis
 ```
 
 ### developmental scripts & CI / 開発用のスクリプトとCI環境
