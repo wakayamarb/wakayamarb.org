@@ -18,6 +18,7 @@ before_script:
 - npm run build
 
 script:
+- npm test
 - echo 'eliminating unnecessary files..'
 - echo 'bin/' > .gitignore
 - rm -rf 'maps/'
