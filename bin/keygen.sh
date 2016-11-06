@@ -20,8 +20,9 @@ if [[ -f ./id_ecdsa.pub ]]; then
   rm ./id_ecdsa.pub
 fi
 
-ssh-keygen -t ecdsa -f ./id_ecdsa -q -N '' -C ''
+ssh-keygen -t ecdsa -f ./id_ecdsa -q -N ''
 travis encrypt-file ./id_ecdsa
+rm ./id_ecdsa
 
 echo ''
 echo "Be sure to remove old Public key from GitHub with one below:"
