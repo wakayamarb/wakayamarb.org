@@ -30,4 +30,4 @@ git commit -m "Deploy from travis [ci skip]"
 git push --force origin $GITHUB_BRANCH_TO_DEPLOY
 
 echo 'Deploying to production server..'
-scp ./* $PRODUCTION_DIR
+scp -P $PRODUCTION_PORT ./* $PRODUCTION_DIR >/dev/null 2>&1
