@@ -46,7 +46,6 @@
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "http-server": "^0.9.0",
-    "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "^2.1.13",
     "sass-lint": "^1.9.1",
     "streamqueue": "^1.1.1",
