@@ -34,7 +34,6 @@ script:
 - rm 'circle.yml'
 - rm 'gulpfile.babel.js'
 - rm 'id_ecdsa.enc'
-- rm 'id_ecdsa.pub'
 - rm 'package.json'
 - bash ./bin/travis-deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
 
