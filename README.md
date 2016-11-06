@@ -15,22 +15,31 @@ $ npm install
 $ npm run serve
 ```
 
-[CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/) works on code linting and small tests triggered by *pull requests* and *push* except `gh-pages` branch.
-[Travis CI](ttps://travis-ci.org/wakayamarb/wakayamarb.org) works on deployment to gh-pages (and production, in future) triggered by *push* to `master` branch.
+[CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/) lint the codes and do tests, triggered by all **pull requests** and **pushes** except `gh-pages` branch.
+
+[Travis CI](ttps://travis-ci.org/wakayamarb/wakayamarb.org) deploy codes to gh-pages (and to the production server, in future) triggered by **pushes** to `master` branch.
 
 ## participating
 
-### commiters
+### for commiters
 
-1. *Checkout* new branch.
-1. Commit modification and push.
-1. Make pull request to `master` branch.
+1. **Checkout** new branch.
+1. Commit modification and push it.
+1. **Make pull request** to `master`.
+1. Check **CircleCI's status** on the [pull request page](https://github.com/wakayamarb/wakayamarb.org/pulls).
+1. If build passed, **Merge** it.
+1. If not, fix and commit until build being passed.
+1. Merge it.
 
-### contributors
+### for contributors
 
-1. *Fork* this repository.
-1. Commit modification and push.
-1. Make pull request to `base:master` branch.
+1. **Fork** this repository.
+1. Commit modification and push it.
+1. **Make pull request** to `base:master`.
+1. Check **CircleCI's status** on the [pull request page](https://github.com/wakayamarb/wakayamarb.org/pulls).
+1. If build not passed, fix and commit until build being passed.
+1. Check comments of commiters.
+1. Without problem, wait merge.
 
 ## production deployment
 
