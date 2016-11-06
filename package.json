@@ -9,8 +9,7 @@
     "serve": "gulp serve",
     "screenshot": "http-server -s & PS=$! && phantomjs ./bin/screenshot.js && kill $PS",
     "test": "ls ./style.css ./bundle.js",
-    "keygen": "bash ./bin/keygen.sh",
-    "production": "bash ./bin/production.sh"
+    "keygen": "bash ./bin/keygen.sh"
   },
   "repository": {
     "type": "git",

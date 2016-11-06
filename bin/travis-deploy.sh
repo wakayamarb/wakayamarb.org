@@ -28,3 +28,6 @@ git checkout -b $GITHUB_BRANCH_TO_DEPLOY
 git add .
 git commit -m "Deploy from travis [ci skip]"
 git push --force origin $GITHUB_BRANCH_TO_DEPLOY
+
+echo 'Deploying to production server..'
+scp ./* $PRODUCTION_DIR
