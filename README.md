@@ -6,6 +6,8 @@ Website of local ruby community Wakayama.rb.
 
 [http://wakayamarb.org](http://wakayamarb.org)
 
+[https://wakayamarb.github.io/wakayamarb.org/](https://wakayamarb.github.io/wakayamarb.org/)
+
 ## development
 OK >=Node.js: 4
 
