@@ -174,7 +174,7 @@ WiFi.httpPost("192.168.1.52:3000", header, body)
 <pre><code class="ruby">#!mruby
 #Version 2.16
 for value in 1..50
-  WiFi.httpGet("192.168.1.58:3000/?query1=" + value.to_s + "&query2=" + (value * value).to_s)
+  WiFi.httpGet("192.168.1.58:3000/?query1=" + value.to_s + "&amp;query2=" + (value * value).to_s)
   delay 100
 end
 header=["User-Agent: curl"]

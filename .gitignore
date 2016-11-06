@@ -37,12 +37,10 @@ jspm_packages
 .node_repl_history
 
 # build package
-style.css
-fonts/
 maps/
 screenshots/
+style.css
 bundle.js
-*.tar.gz
 
 # deploy key
 id_ecdsa

@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "gulp build --verbose",
-    "start": "gulp serve",
+    "start": "gulp start",
     "lint": "sass-lint && eslint ./src/*.js",
     "test": "ls ./style.css ./bundle.js",
     "keygen": "bash ./bin/keygen.sh",

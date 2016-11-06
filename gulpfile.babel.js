@@ -15,20 +15,17 @@ import source       from 'vinyl-source-stream'
 import buffer       from 'vinyl-buffer'
 import browserSync  from 'browser-sync'
 
-const styles    = ['./src/*.scss']
-const scripts   = ['./src/main.js']
+const styles         = ['./src/*.scss']
+const scripts        = ['./src/main.js']
+const bootstrapEntry = ['./src/bootstrap-custom.less']
+const externalStyles = ['./node_modules/highlight.js/styles/default.css']
 
-const bootstrap = ['./src/bootstrap-custom.less']
-const externalStyles = [
-  './node_modules/highlight.js/styles/default.css'
-]
-
-gulp.task('css', () => {
+gulp.task('css:dev', () => {
 
   streamqueue(
     { objectMode: true },
     // bootstrap custom
-    gulp.src(bootstrap)
+    gulp.src(bootstrapEntry)
       .pipe(plumber())
       .pipe(sourcemaps.init())
       .pipe(less({ paths: ['./node_modules/bootstrap/less/'] })),
@@ -47,8 +44,30 @@ gulp.task('css', () => {
       cascade: false
     }))
     .pipe(concat('style.css'))
-    .pipe(minify())
+    .pipe(minify({ keepSpecialComments: 1 }))
     .pipe(sourcemaps.write('./maps/'))
+    .pipe(gulp.dest('./'))
+})
+
+gulp.task('css:prod', () => {
+
+  streamqueue(
+    { objectMode: true },
+    // bootstrap custom
+    gulp.src(bootstrapEntry)
+      .pipe(less({ paths: ['./node_modules/bootstrap/less/'] })),
+
+    gulp.src(styles)
+      .pipe(sass()),
+
+    gulp.src(externalStyles)
+  )
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(concat('style.css'))
+    .pipe(minify({ keepSpecialComments: 1 }))
     .pipe(gulp.dest('./'))
 })
 
@@ -58,18 +77,17 @@ gulp.task('js', () => {
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
-    .pipe(uglify({ preserveComments: 'some' }))
+    .pipe(uglify({ preserveComments: true }))
     .pipe(gulp.dest('./'))
 })
 
-gulp.task('build', ['css', 'js'])
+gulp.task('build', ['css:prod', 'js'])
+gulp.task('build:dev', ['css:dev', 'js'])
 
-gulp.task('serve', ['build'], () => {
-  browserSync.init({
-    server: { baseDir: './' }
-  })
-  gulp.watch(bootstrap, ['css'])
-  gulp.watch(styles, ['css'])
+gulp.task('start', ['build:dev'], () => {
+  browserSync.init({ server: { baseDir: './' } })
+  gulp.watch(bootstrapEntry, ['css:dev'])
+  gulp.watch(styles,  ['css:dev'])
   gulp.watch(scripts, ['js'])
   gulp.watch(['./index.html', './style.css', './bundle.js'])
     .on('change', browserSync.reload)
