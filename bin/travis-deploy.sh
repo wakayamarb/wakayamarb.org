@@ -5,6 +5,8 @@ if [[ $CI != "true" && $TRAVIS != "true" ]]; then
   exit 0
 fi
 
+rm -rf './bin'
+
 if [[ $2 != "$3" ]]; then
   echo "Not suitable to deploy. '$2' expected to be '$3'."
   exit 0
@@ -30,4 +32,4 @@ git commit -m "Deploy from travis [ci skip]"
 git push --force origin $GITHUB_BRANCH_TO_DEPLOY
 
 echo 'Deploying to production server..'
-scp -P $PRODUCTION_PORT ./* $PRODUCTION_USER@$PRODUCTION_HOST:$PRODUCTION_DIR # >/dev/null 2>&1
+scp -r -P $PRODUCTION_PORT ./* $PRODUCTION_USER@$PRODUCTION_HOST:$PRODUCTION_DIR >/dev/null 2>&1
