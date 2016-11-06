@@ -27,6 +27,15 @@ $ npm run start
 - **CircleCI** [![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg?style=shield)](https://circleci.com/gh/wakayamarb/wakayamarb.org) はコードのスタイルチェックとテストを担当し、すべての**プルリクエスト**と**プッシュ** (`gh-pages`へのプッシュは除きます) をトリガーとして動作します。
 - **Travis CI** [![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org) は`gh-pages`ブランチとプロダクションサーバーに対するウェブサイトのデプロイを担当し、`master`ブランチへの**push**をトリガーとして動作します。
 
+### CIサービス利用のポリシー
+
+このプロジェクトでは**CircleCI**と**Travis CI**の2つのCIサービスを利用しています。
+
+スタイルチェックやテストの実行を担当しているCircleCIは、プルリクエストをトリガーに動作する設定としているため、プルリクエストを介して全ての人がコンテナ内で任意のコードを実行できます。従って、デプロイ用の秘密鍵を含む全てのセキュアな情報をこのCIサービスに渡すべきではありません。
+
+プロジェクトのデプロイを担当しているTravis CI、は`master`ブランチへのプッシュのみをトリガーにして動作する設定としているため、コンテナ内部で実行されるコードはすべてコミッターの管理下にあります。プルリクエストを受け入れる際は、秘密鍵などのセキュアな情報が露出するような変更が含まれないことを確認して下さい。
+
+
 ### コミットの方法
 
 1. 新しいブランチを**チェックアウト**します。

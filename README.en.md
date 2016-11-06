@@ -27,6 +27,14 @@ Then do not forget to replace public key at GitHub from [here](https://github.co
 - **CircleCI** identified by the badge [![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg?style=shield)](https://circleci.com/gh/wakayamarb/wakayamarb.org) lint the codes and do tests, triggered by all **pull requests** and **pushes** except `gh-pages` branch.
 - **Travis CI** identified by the badge [![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org) deploy the website to `gh-pages` and to the production server, triggered by **pushes** to `master` branch.
 
+### Policy of CI service usage
+
+This project use CircleCI and Travis CI.
+
+Do not pass secure information to CircleCI, because everybody can start a container and exec arbitrary codes via Pull Requests.
+
+When commiter accepts pull requests, be attention to malicious code injection into Travis CI, such as that expose private deploy key.
+
 ### How to commit ?
 
 1. **Checkout** new branch.
