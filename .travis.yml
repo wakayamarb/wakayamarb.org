@@ -1,22 +1,18 @@
 language: node_js
-
 node_js:
 - '4'
 - '5'
 - '6'
-
 branches:
   only:
   - master
-
 before_install:
-- openssl aes-256-cbc -K $encrypted_05591fa2c311_key -iv $encrypted_05591fa2c311_iv -in id_ecdsa.enc -out ~/.ssh/id_ecdsa -d
+- openssl aes-256-cbc -K $encrypted_05591fa2c311_key -iv $encrypted_05591fa2c311_iv
+  -in id_ecdsa.enc -out ~/.ssh/id_ecdsa -d
 - chmod 600 ~/.ssh/id_ecdsa
-
 before_script:
 - npm install
 - npm run build
-
 script:
 - npm test
 - echo 'eliminating unnecessary files..'
@@ -35,3 +31,7 @@ script:
 - rm 'id_ecdsa.pub'
 - rm 'package.json'
 - bash ./bin/travis-deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
+
+env:
+  global:
+    secure: Ykdx077IjwSXsDZa65BPJbipIPTNTg5qYamza2AcEQZaAdMtqmw5mQ/ZFFpR0Se22UzS6d7jQvLjqvWsJRncRSDaJCgfM+3N1C2jMT7B0Rw3Lvwa0WQftT2eYXQakrKxdqFqy8rw1rUzeqJ0vXE+00pn64HxsOWSfYi0K/xmkPN9GT/aYzsLYh/QdbUVrSG5utktG3HaulEPZN7USz9AvnuTND+Sg5quY2rdQw9HSsHoRenPD4j3JBp/ThT31O7buXFC8bEpSqYyXJF9DEdukUTO6cm3r1ZWDH0+gH4nZ72J/j8gDQirw/6og3bgPpiWhuDde+Io9AvoGHCYHUlQ2NGxyVQho6TJdqzI7Vrt78iEL2U1D8/ESSwcJVshtc1q0ilPmbcssgC7n+0qX9rZDjxcCuiotJt+XkVZTp3CHIP9J2FOUy8+b3wnultUmf6DITLezthK16sVkHOVE/OCYqpHtZyqNNzlmM5dpUOX/x30o8x5nHGWZjA3wnPKhPn9HuGWyvWIfiZLR7aCB1J7T0J+OBmIqkbu2MTjeQQhXVfKy0sSFXPCHJOHr8deNIcmF225DOBjGiyx+tttptWdg+yNRS6FRgwgDVm0Vyp2SSUNNYa8H09YC7gtuZUGPd7nm0WWW0Jvq/5zsK9SwiV1YyhezcgLigdt8Ab/O3ia2dQ=

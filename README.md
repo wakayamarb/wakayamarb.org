@@ -41,15 +41,6 @@ $ npm run serve
 1. Check comments of commiters.
 1. Without problem, wait merge.
 
-## production deployment
-
-```
-$ npm run production
-$ scp ./wakayamarb.org.tar.gz {{user}}@wakayamarb.org:{{port}}/path/to/html/public
-$ cd /path/to/html/public
-$ tar xvzf wakayamarb.org.tar.gz
-```
-
 ## deploy key reset (for commiters)
 
 If you leak the secret key `id_ecdsa`, run `npm run keygen` to reset the key pair.
