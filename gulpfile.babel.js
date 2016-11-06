@@ -20,7 +20,6 @@ const scripts   = ['./src/main.js']
 
 const bootstrap = ['./src/bootstrap-custom.less']
 const externalStyles = [
-  './node_modules/font-awesome/css/font-awesome.css',
   './node_modules/highlight.js/styles/default.css'
 ]
 
@@ -63,12 +62,7 @@ gulp.task('js', () => {
     .pipe(gulp.dest('./'))
 })
 
-gulp.task('font', () => {
-  gulp.src('./node_modules/font-awesome/fonts/*')
-    .pipe(gulp.dest('./fonts/'))
-})
-
-gulp.task('build', ['css', 'js', 'font'])
+gulp.task('build', ['css', 'js'])
 
 gulp.task('serve', ['build'], () => {
   browserSync.init({

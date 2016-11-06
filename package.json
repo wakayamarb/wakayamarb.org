@@ -53,7 +53,6 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0",
     "highlight.js": "^9.8.0"
   }
 }

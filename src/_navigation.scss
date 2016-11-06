@@ -11,5 +11,13 @@
   .nav-icon {
     @include align-center;
     width: 100%;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: bold;
   }
+
+  .nav-icon-developer_board {
+    padding-left: 3px;
+  }
+
 }
