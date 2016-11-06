@@ -7,7 +7,7 @@
     "build": "gulp build --verbose",
     "lint": "sass-lint && eslint ./src/*.js",
     "serve": "gulp serve",
-    "screenshot":"http-server -s & PS=$! && phantomjs ./bin/screenshot.js && kill $PS",
+    "screenshot": "http-server -s & PS=$! && phantomjs ./bin/screenshot.js && kill $PS",
     "test": "ls ./style.css ./bundle.js",
     "keygen": "bash ./bin/keygen.sh",
     "production": "bash ./bin/production.sh"
@@ -47,6 +47,7 @@
     "gulp-uglify": "^2.0.0",
     "http-server": "^0.9.0",
     "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.13",
     "sass-lint": "^1.9.1",
     "streamqueue": "^1.1.1",
     "vinyl-buffer": "^1.0.0",
