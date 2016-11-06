@@ -10,7 +10,7 @@ branches:
   - master
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_05591fa2c311_key -iv $encrypted_05591fa2c311_iv -in id_ecdsa.enc -out ~/.ssh/id_ecdsa -d
+- openssl aes-256-cbc -K $encrypted_05591fa2c311_key -iv $encrypted_05591fa2c311_iv -in id_ecdsa.enc -out ./id_ecdsa -d
 - chmod 600 ~/.ssh/id_ecdsa
 
 before_script:
