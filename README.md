@@ -1,6 +1,6 @@
 # wakayamarb.org
 
-[![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg?style=shield)](https://circleci.com/gh/wakayamarb/wakayamarb.org) [![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org)
+[![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg)](https://circleci.com/gh/wakayamarb/wakayamarb.org) [![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org)
 
 和歌山Rubyのウェブサイトです。
 
@@ -31,7 +31,7 @@ $ gem install travis
 - `npm test` テストを実行します。
 - `npm run keygen` デプロイ用の鍵ペアをリセットします。プロジェクトのデプロイ担当者以外はこのコマンドを実行しないでください。秘密鍵を漏洩してしまった場合、このコマンドで鍵ペアをリセットしてください。また、[GitHubの設定ページ](https://github.com/wakayamarb/wakayamarb.org/settings/keys)やプロダクションサーバーに登録されている公開鍵を交換することを忘れないようにしてください。
 - `npm run screenshot` スクリーンショットを作成し`./screenshots/`フォルダに保存します。
-- **CircleCI** [![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg?style=shield)](https://circleci.com/gh/wakayamarb/wakayamarb.org) はコードのスタイルチェックとテストを担当し、すべての**プルリクエスト**と**プッシュ** (`gh-pages`へのプッシュは除きます) をトリガーとして動作します。
+- **CircleCI** [![CircleCI](https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg)](https://circleci.com/gh/wakayamarb/wakayamarb.org) はコードのスタイルチェックとテストを担当し、すべての**プルリクエスト**と**プッシュ** (`gh-pages`へのプッシュは除きます) をトリガーとして動作します。
 - **Travis CI** [![Build Status](https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master)](https://travis-ci.org/wakayamarb/wakayamarb.org) は`gh-pages`ブランチとプロダクションサーバーに対するウェブサイトのデプロイを担当し、`master`ブランチへの**プッシュ**をトリガーとして動作します。
 
 ### CIサービス利用のポリシー
