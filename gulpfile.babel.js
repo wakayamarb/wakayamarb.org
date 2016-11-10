@@ -110,8 +110,8 @@ gulp.task('favicons', () => {
     .pipe(gulp.dest('./favicons/'))
 })
 
-gulp.task('build', ['css:prod', 'js', 'favicons'])
-gulp.task('build:dev', ['css:dev', 'js', 'favicons'])
+gulp.task('build', ['css:prod', 'js'])
+gulp.task('build:dev', ['css:dev', 'js'])
 
 gulp.task('start', ['build:dev'], () => {
   browserSync.init({ server: { baseDir: './' } })

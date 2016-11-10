@@ -33,6 +33,12 @@ $ npm run start
 
 ### その他の依存モジュール
 
+sketchファイルからのファビコンの書き出しに必要なsketch tool(Macのみ)
+
+```
+$ pushd ./node_modules/gulp-sketch/ ; npm run install-sketchtool ; popd
+```
+
 鍵管理をする人は、以下のrubygemをインストールしてください。
 
 ```
@@ -42,6 +48,7 @@ $ gem install travis
 ### 開発用スクリプトとCI環境
 
 - `npm run build` プロジェクトをビルドします。
+- `npm run generate-favicons` ファビコンを生成します。
 - `npm start` プロジェクトのファイルをライブコンパイルし、ライブリロードを備えた開発用サーバを起動します。
 - `npm run lint` JavaScriptとSASSのコーディングスタイルをチェックします。
 - `npm test` テストを実行します。

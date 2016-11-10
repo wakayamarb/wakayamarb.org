@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "gulp build --verbose",
+    "generate-favicons": "gulp favicons",
     "start": "gulp start",
     "lint": "sass-lint && eslint ./src/*.js",
     "test": "ls ./style.css ./bundle.js",
