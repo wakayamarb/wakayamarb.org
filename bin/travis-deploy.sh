@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [[ $CI != "true" && $TRAVIS != "true" ]]; then
   echo 'Not callable witout travis CI.'

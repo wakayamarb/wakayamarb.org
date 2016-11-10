@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // phantom.js script
 var webPage = require('webpage')
 var page = webPage.create()

@@ -4,8 +4,6 @@ node_js:
 - '4'
 - '6'
 
-sudo: yes
-
 branches:
   only:
   - master
@@ -16,10 +14,8 @@ before_install:
 - ssh-keyscan -t ecdsa -p $PRODUCTION_PORT -H $PRODUCTION_HOST 2>/dev/null >> ~/.ssh/known_hosts
 
 before_script:
+- bash ./bin/install-sketchtools.sh
 - npm install
-- pushd ./node_modules/gulp-sketch
-- npm run install-sketchtool
-- popd
 - npm run build
 
 script:
