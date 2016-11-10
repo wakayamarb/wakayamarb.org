@@ -8,6 +8,7 @@ import plumber      from 'gulp-plumber'
 import sass         from 'gulp-sass'
 import sourcemaps   from 'gulp-sourcemaps'
 import uglify       from 'gulp-uglify'
+import favicons     from 'gulp-favicons'
 import browserify   from 'browserify'
 import babelify     from 'babelify'
 import streamqueue  from 'streamqueue'
@@ -15,10 +16,13 @@ import source       from 'vinyl-source-stream'
 import buffer       from 'vinyl-buffer'
 import browserSync  from 'browser-sync'
 
+import meta from './package.json'
+
 const styles         = ['./src/*.scss']
 const scripts        = ['./src/main.js']
 const bootstrapEntry = ['./src/bootstrap-custom.less']
 const externalStyles = ['./node_modules/highlight.js/styles/default.css']
+const faviconsSrc    = ['./images/logo.png']
 
 gulp.task('css:dev', () => {
 
@@ -81,8 +85,28 @@ gulp.task('js', () => {
     .pipe(gulp.dest('./'))
 })
 
-gulp.task('build', ['css:prod', 'js'])
-gulp.task('build:dev', ['css:dev', 'js'])
+gulp.task('favicons', () => {
+  gulp.src(faviconsSrc)
+    .pipe(favicons({
+      appName:        meta.name,
+      appDescription: meta.description,
+      developerName:  meta.author.name,
+      developerURL:   meta.author.url,
+      background: '#020307',
+      path: 'favicons/',
+      url: 'http://wakayamarb.org/',
+      display: 'standalone',
+      orientation: 'portrait',
+      start_url: '/?homescreen=1',
+      version: meta.version,
+      logging: false,
+      online: false
+    }))
+    .pipe(gulp.dest('./favicons/'))
+})
+
+gulp.task('build', ['css:prod', 'js', 'favicons'])
+gulp.task('build:dev', ['css:dev', 'js', 'favicons'])
 
 gulp.task('start', ['build:dev'], () => {
   browserSync.init({ server: { baseDir: './' } })

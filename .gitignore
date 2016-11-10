@@ -41,6 +41,7 @@ maps/
 screenshots/
 style.css
 bundle.js
+favicons/
 
 # deploy key
 id_ecdsa
