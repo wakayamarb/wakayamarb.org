@@ -32,7 +32,7 @@ script:
   - rm -rf 'maps/'
   - rm -rf 'node_modules/'
   - rm -rf 'src/'
-  - rm './images/*.sketch'
+  - rm 'images/*.sketch'
   - rm '.babelrc'
   - rm '.editorconfig'
   - rm '.eslintignore'
