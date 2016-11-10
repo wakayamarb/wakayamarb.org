@@ -29,21 +29,21 @@ script:
   - npm test
   - echo 'eliminating unnecessary files..'
   - echo 'bin/' > .gitignore
-  - rm -rf 'maps/'
-  - rm -rf 'node_modules/'
-  - rm -rf 'src/'
-  - rm 'images/*.sketch'
-  - rm '.babelrc'
-  - rm '.editorconfig'
-  - rm '.eslintignore'
-  - rm '.eslintrc.json'
-  - rm '.sass-lint.yml'
-  - rm '.travis.yml'
-  - rm 'circle.yml'
-  - rm 'gulpfile.babel.js'
-  - rm 'id_ecdsa.enc'
-  - rm 'package.json'
-  - bash ./bin/travis-deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
+  - rm -rf maps/
+  - rm -rf node_modules/
+  - rm -rf src/
+  - rm images/*.sketch
+  - rm .babelrc
+  - rm .editorconfig
+  - rm .eslintignore
+  - rm .eslintrc.json
+  - rm .sass-lint.yml
+  - rm .travis.yml
+  - rm circle.yml
+  - rm gulpfile.babel.js
+  - rm id_ecdsa.enc
+  - rm package.json
+  - bash bin/travis-deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
 
 env:
   global:

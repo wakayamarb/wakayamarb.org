@@ -37,14 +37,14 @@ jspm_packages
 .node_repl_history
 
 # build package
-maps/
-screenshots/
-style.css
-bundle.js
-favicons/
+/maps/
+/screenshots/
+/style.css
+/bundle.js
+/favicons/
 
 # deploy key
-id_ecdsa
-id_rsa
-id_ecdsa.pub
-id_rsa.pub
+/id_ecdsa
+/id_rsa
+/id_ecdsa.pub
+/id_rsa.pub
