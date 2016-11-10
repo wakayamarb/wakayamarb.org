@@ -22,9 +22,9 @@
     "ruby on rails"
   ],
   "author": {
-      "name": "Wakayama.rb",
-      "url": "http://wakayamarb.org"
-    },
+    "name": "Wakayama.rb",
+    "url": "http://wakayamarb.org"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wakayamarb/wakayamarb.org/issues"
@@ -46,6 +46,7 @@
     "gulp-less": "^3.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.2",
+    "gulp-sketch": "^1.0.3",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "http-server": "^0.9.0",

@@ -8,6 +8,7 @@ import plumber      from 'gulp-plumber'
 import sass         from 'gulp-sass'
 import sourcemaps   from 'gulp-sourcemaps'
 import uglify       from 'gulp-uglify'
+import sketch       from 'gulp-sketch'
 import favicons     from 'gulp-favicons'
 import browserify   from 'browserify'
 import babelify     from 'babelify'
@@ -22,7 +23,7 @@ const styles         = ['./src/*.scss']
 const scripts        = ['./src/main.js']
 const bootstrapEntry = ['./src/bootstrap-custom.less']
 const externalStyles = ['./node_modules/highlight.js/styles/default.css']
-const faviconsSrc    = ['./images/logo.png']
+const faviconsSrc    = ['./images/logo.sketch']
 
 gulp.task('css:dev', () => {
 
@@ -87,6 +88,10 @@ gulp.task('js', () => {
 
 gulp.task('favicons', () => {
   gulp.src(faviconsSrc)
+    .pipe(sketch({
+      export: 'slices',
+      formats: 'png'
+    }))
     .pipe(favicons({
       appName:        meta.name,
       appDescription: meta.description,

@@ -16,6 +16,9 @@ before_install:
 
 before_script:
 - npm install
+- pushd ./node_modules/gulp-sketch
+- npm run install-sketchtool
+- popd
 - npm run build
 
 script:
