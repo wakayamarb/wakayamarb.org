@@ -90,22 +90,35 @@ gulp.task('favicons', () => {
   gulp.src(faviconsSrc)
     .pipe(sketch({
       export: 'slices',
-      formats: 'png'
+      formats: 'png',
+      scales: '2.0',
     }))
     .pipe(favicons({
+      // see https://github.com/haydenbleasel/favicons/blob/master/readme.md
       appName:        meta.name,
       appDescription: meta.description,
       developerName:  meta.author.name,
       developerURL:   meta.author.url,
-      background: '#020307',
-      path: 'favicons/',
+      version: meta.version,
+      background: '#fafbfa',
       url: 'http://wakayamarb.org/',
       display: 'standalone',
       orientation: 'portrait',
       start_url: '/?homescreen=1',
-      version: meta.version,
       logging: false,
-      online: false
+      online: false,
+      html: './.favicon-refs.html',
+      pipeHTML: false,
+      icons: {
+        android: true,              // Create Android homescreen icon. `boolean`
+        appleIcon: true,            // Create Apple touch icons. `boolean` or `{ offset: offsetInPercentage }`
+        appleStartup: false,         // Create Apple startup images. `boolean`
+        coast: { offset: 25 },      // Create Opera Coast icon with offset 25%. `boolean` or `{ offset: offsetInPercentage }`
+        favicons: true,             // Create regular favicons. `boolean`
+        firefox: true,              // Create Firefox OS icons. `boolean` or `{ offset: offsetInPercentage }`
+        windows: true,              // Create Windows 8 tile icons. `boolean`
+        yandex: true                // Create Yandex browser icon. `boolean`
+      }
     }))
     .pipe(gulp.dest('./favicons/'))
 })

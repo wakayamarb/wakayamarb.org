@@ -1,5 +1,6 @@
 os:
-  - osx
+  # - osx
+  -
 
 language:
   - node_js
@@ -18,31 +19,21 @@ before_install:
   - ssh-keyscan -t ecdsa -p $PRODUCTION_PORT -H $PRODUCTION_HOST 2>/dev/null >> ~/.ssh/known_hosts
 
 before_script:
-  - npm install
-  - pushd ./node_modules/gulp-sketch
-  - npm run install-sketchtool
-  - popd
+  # - pushd ./node_modules/gulp-sketch
+  # - npm run install-sketchtool
+  # - popd
   - npm run build
-  - npm run generate-favicons
+  # - npm run generate-favicons
 
 script:
   - npm test
-  - echo 'eliminating unnecessary files..'
-  - echo 'bin/' > .gitignore
-  - rm -rf maps/
-  - rm -rf node_modules/
-  - rm -rf src/
-  - rm images/*.sketch
-  - rm .babelrc
-  - rm .editorconfig
-  - rm .eslintignore
-  - rm .eslintrc.json
-  - rm .sass-lint.yml
-  - rm .travis.yml
-  - rm circle.yml
-  - rm gulpfile.babel.js
-  - rm id_ecdsa.enc
-  - rm package.json
+  - echo '*'                >> .gitignore
+  - echo '!/favicons/'      >> .gitignore
+  - echo '!/images/'        >> .gitignore
+  - echo '/images/*.sketch' >> .gitignore
+  - echo '!/bundle.js'      >> .gitignore
+  - echo '!/index.html'     >> .gitignore
+  - echo '!/style.css'      >> .gitignore
   - bash bin/travis-deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
 
 env:

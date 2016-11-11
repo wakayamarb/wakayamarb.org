@@ -33,13 +33,13 @@ $ npm run start
 
 ### その他の依存モジュール
 
-sketchファイルからのファビコンの書き出しに必要なsketch tool(Macのみ)
+sketchファイルからファビコンを生成する場合は、sketch toolをインストールしてください。(Macのみ)
 
 ```
 $ pushd ./node_modules/gulp-sketch/ ; npm run install-sketchtool ; popd
 ```
 
-鍵管理をする人は、以下のrubygemをインストールしてください。
+デプロイ用の鍵を管理する場合は、以下のrubygemをインストールしてください。
 
 ```
 $ gem install travis
@@ -47,12 +47,12 @@ $ gem install travis
 
 ### 開発用スクリプトとCI環境
 
-- `npm run build` プロジェクトをビルドします。
-- `npm run generate-favicons` ファビコンを生成します。
-- `npm start` プロジェクトのファイルをライブコンパイルし、ライブリロードを備えた開発用サーバを起動します。
+- `npm run build` プロジェクトをビルドし、デプロイ可能な状態にします。
+- `npm start` プロジェクトのファイルをライブコンパイルします。また、コンパイルに応じてライブリロードする開発用サーバーをローカル環境で起動します。
 - `npm run lint` JavaScriptとSASSのコーディングスタイルをチェックします。
 - `npm test` テストを実行します。
 - `npm run keygen` デプロイ用の鍵ペアをリセットします。秘密鍵を漏洩してしまった場合、このコマンドで鍵ペアをリセットしてください。また、[GitHubの設定ページ](https://github.com/wakayamarb/wakayamarb.org/settings/keys)やプロダクションサーバーに登録されている公開鍵を交換してください。プロジェクトのデプロイ担当者のみがこのコマンドを実行するべきです。
+- `npm run generate-favicons` ファビコンを生成します。Mac x Sketch環境のみで実行できます。
 - `npm run screenshot` スクリーンショットを作成し`./screenshots/`フォルダに保存します。
 - **CircleCI** [<img src="https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg" height="14" alt="Build Status">](https://circleci.com/gh/wakayamarb/wakayamarb.org) はコードのスタイルチェックとテストを担当し、すべての**プルリクエスト**と**プッシュ** (`gh-pages`へのプッシュは除きます) をトリガーとして動作します。
 - **Travis CI** [<img src="https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master" height="14" alt="Build Status">](https://travis-ci.org/wakayamarb/wakayamarb.org) は`gh-pages`ブランチとプロダクションサーバーに対するウェブサイトのデプロイを担当し、`master`ブランチへの**プッシュ**をトリガーとして動作します。

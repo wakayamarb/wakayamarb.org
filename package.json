@@ -5,11 +5,11 @@
   "main": "index.html",
   "scripts": {
     "build": "gulp build --verbose",
-    "generate-favicons": "gulp favicons",
     "start": "gulp start",
     "lint": "sass-lint && eslint ./src/*.js",
     "test": "ls ./style.css ./bundle.js",
     "keygen": "bash ./bin/keygen.sh",
+    "generate-favicons": "gulp favicons",
     "screenshot": "http-server -s & PS=$! && phantomjs ./bin/screenshot.js && kill $PS"
   },
   "repository": {
