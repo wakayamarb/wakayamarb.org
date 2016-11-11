@@ -23,8 +23,8 @@ GITHUB_BRANCH_TO_DEPLOY=$1
 
 rm -rf .git/
 git init
-git config user.name $USER
-git config user.email "$USER@wakayamarb.org"
+git config user.name 'travis'
+git config user.email "travis@wakayamarb.org"
 git remote add origin "git@github.com:$TRAVIS_REPO_SLUG.git"
 git checkout -b $GITHUB_BRANCH_TO_DEPLOY
 git add .
