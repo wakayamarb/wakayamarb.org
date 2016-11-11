@@ -25,5 +25,5 @@ travis encrypt-file ./id_ecdsa
 rm ./id_ecdsa
 
 echo ''
-echo "Be sure to remove old Public key from GitHub with one below:"
+echo "Be sure to replace the public key with one below:"
 echo -e "\033[1;32m$(cat ./id_ecdsa.pub)\033[0m"

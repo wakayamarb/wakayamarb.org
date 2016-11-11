@@ -99,7 +99,7 @@ gulp.task('favicons', () => {
       appDescription: meta.description,
       developerName:  meta.author.name,
       developerURL:   meta.author.url,
-      version: meta.version,
+      version:        meta.version,
       background: '#fafbfa',
       url: 'http://wakayamarb.org/',
       display: 'standalone',
