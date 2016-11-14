@@ -68,6 +68,9 @@
     "bootstrap": "^3.3.7",
     "highlight.js": "^9.8.0"
   },
+  "babel": {
+    "presets": ["es2015"]
+  },
   "remarkConfig": {
     "presets": ["lint-recommended"]
   }
