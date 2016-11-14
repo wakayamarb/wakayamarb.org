@@ -4,8 +4,8 @@
 
 和歌山県の地域Rubyコミュニティである和歌山Rubyのウェブサイトです。このウェブサイトは以下のURLでアクセスできます。
 
-- [http://wakayamarb.org](http://wakayamarb.org)
-- [https://wakayamarb.github.io/wakayamarb.org/](https://wakayamarb.github.io/wakayamarb.org/)
+-   [http://wakayamarb.org](http://wakayamarb.org)
+-   [https://wakayamarb.github.io/wakayamarb.org/](https://wakayamarb.github.io/wakayamarb.org/)
 
 ## 開発環境
 
@@ -47,15 +47,15 @@ $ gem install travis
 
 ### 開発用スクリプトとCI環境
 
-- `npm run build` プロジェクトをビルドし、デプロイ可能な状態にします。
-- `npm start` プロジェクトのファイルをライブコンパイルします。また、コンパイルに応じてライブリロードする開発用サーバーをローカル環境で起動します。
-- `npm run lint` JavaScriptとSASSのコーディングスタイルをチェックします。
-- `npm test` テストを実行します。
-- `npm run keygen` デプロイ用の鍵ペアをリセットします。秘密鍵を漏洩してしまった場合、このコマンドで鍵ペアをリセットしてください。また、[GitHubの設定ページ](https://github.com/wakayamarb/wakayamarb.org/settings/keys)やプロダクションサーバーに登録されている公開鍵を交換してください。プロジェクトのデプロイ担当者のみがこのコマンドを実行するべきです。
-- `npm run generate-favicons` ファビコンを生成します。Mac x Sketch環境のみで実行できます。
-- `npm run screenshot` スクリーンショットを作成し`./screenshots/`フォルダに保存します。
-- **CircleCI** [<img src="https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg" height="14" alt="Build Status">](https://circleci.com/gh/wakayamarb/wakayamarb.org) はコードのスタイルチェックとテストを担当し、すべての**プルリクエスト**と**プッシュ** (`gh-pages`へのプッシュは除きます) をトリガーとして動作します。
-- **Travis CI** [<img src="https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master" height="14" alt="Build Status">](https://travis-ci.org/wakayamarb/wakayamarb.org) は`gh-pages`ブランチとプロダクションサーバーに対するウェブサイトのデプロイを担当し、`master`ブランチへの**プッシュ**をトリガーとして動作します。
+-   `npm run build` プロジェクトをビルドし、デプロイ可能な状態にします。
+-   `npm start` プロジェクトのファイルをライブコンパイルします。また、コンパイルに応じてライブリロードする開発用サーバーをローカル環境で起動します。
+-   `npm run lint` JavaScriptとSASSのコーディングスタイルをチェックします。
+-   `npm test` テストを実行します。
+-   `npm run keygen` デプロイ用の鍵ペアをリセットします。秘密鍵を漏洩してしまった場合、このコマンドで鍵ペアをリセットしてください。また、[GitHubの設定ページ](https://github.com/wakayamarb/wakayamarb.org/settings/keys)やプロダクションサーバーに登録されている公開鍵を交換してください。プロジェクトのデプロイ担当者のみがこのコマンドを実行するべきです。
+-   `npm run generate-favicons` ファビコンを生成します。Mac x Sketch環境のみで実行できます。
+-   `npm run screenshot` スクリーンショットを作成し`./screenshots/`フォルダに保存します。
+-   **CircleCI** [<img src="https://circleci.com/gh/wakayamarb/wakayamarb.org/tree/master.svg" height="14" alt="Build Status">](https://circleci.com/gh/wakayamarb/wakayamarb.org) はコードのスタイルチェックとテストを担当し、すべての**プルリクエスト**と**プッシュ** (`gh-pages`へのプッシュは除きます) をトリガーとして動作します。
+-   **Travis CI** [<img src="https://travis-ci.org/wakayamarb/wakayamarb.org.svg?branch=master" height="14" alt="Build Status">](https://travis-ci.org/wakayamarb/wakayamarb.org) は`gh-pages`ブランチとプロダクションサーバーに対するウェブサイトのデプロイを担当し、`master`ブランチへの**プッシュ**をトリガーとして動作します。
 
 ### CIサービス利用のポリシー
 
@@ -69,18 +69,18 @@ $ gem install travis
 
 ### コミットの方法 (主にコミッター向け)
 
-1. 新しいブランチを**チェックアウト**します。
-1. 修正をコミットしてプッシュします。
-1. `master`ブランチに対する**プルリクエスト**を作成します。
-1. **Circle CIのステータス**を[プルリクエストのページ](https://github.com/wakayamarb/wakayamarb.org/pulls)で確認します。
-1. ビルドが成功していた場合、これを**マージ**します。
-1. ビルドが失敗していた場合、成功するまで修正とコミットを行います。
+1.  新しいブランチを**チェックアウト**します。
+1.  修正をコミットしてプッシュします。
+1.  `master`ブランチに対する**プルリクエスト**を作成します。
+1.  **Circle CIのステータス**を[プルリクエストのページ](https://github.com/wakayamarb/wakayamarb.org/pulls)で確認します。
+1.  ビルドが成功していた場合、これを**マージ**します。
+1.  ビルドが失敗していた場合、成功するまで修正とコミットを行います。
 
 ### コントリビューションの方法 (主にコントリビューター向け)
 
-1. リポジトリを**フォーク**します。
-1. 修正をコミットしてプッシュします。
-1. `base:master`ブランチに対する**プルリクエスト**を作成します。
-1. **Circle CIのステータス**を[プルリクエストのページ](https://github.com/wakayamarb/wakayamarb.org/pulls)で確認します。
-1. ビルドが成功していた場合、コメントの投稿やマージされるのを待ちます。
-1. ビルドが失敗していた場合、成功するまで修正とコミットを行います。
+1.  リポジトリを**フォーク**します。
+1.  修正をコミットしてプッシュします。
+1.  `base:master`ブランチに対する**プルリクエスト**を作成します。
+1.  **Circle CIのステータス**を[プルリクエストのページ](https://github.com/wakayamarb/wakayamarb.org/pulls)で確認します。
+1.  ビルドが成功していた場合、コメントの投稿やマージされるのを待ちます。
+1.  ビルドが失敗していた場合、成功するまで修正とコミットを行います。
