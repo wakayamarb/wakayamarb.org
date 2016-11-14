@@ -76,7 +76,15 @@ gulp.task('css:prod', () => {
     .pipe(gulp.dest('./'))
 })
 
-gulp.task('js', () => {
+gulp.task('js:dev', () => {
+  browserify({ entries: scripts })
+    .transform([babelify])
+    .bundle()
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('./'))
+})
+
+gulp.task('js:prod', () => {
   browserify({ entries: scripts })
     .transform([babelify])
     .bundle()
@@ -123,14 +131,14 @@ gulp.task('favicons', () => {
     .pipe(gulp.dest('./favicons/'))
 })
 
-gulp.task('build', ['css:prod', 'js'])
-gulp.task('build:dev', ['css:dev', 'js'])
+gulp.task('build', ['css:prod', 'js:prod'])
+gulp.task('build:dev', ['css:dev', 'js:dev'])
 
 gulp.task('start', ['build:dev'], () => {
   browserSync.init({ server: { baseDir: './' } })
   gulp.watch(bootstrapEntry, ['css:dev'])
   gulp.watch(styles,  ['css:dev'])
-  gulp.watch(scripts, ['js'])
+  gulp.watch(scripts, ['js:dev'])
   gulp.watch(['./index.html', './style.css', './bundle.js'])
     .on('change', browserSync.reload)
 })
