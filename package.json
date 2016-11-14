@@ -62,9 +62,7 @@
     "vinyl-source-stream": "^1.1.0",
     "remark-cli": "^2.1.0",
     "remark-lint": "^5.2.0",
-    "remark-preset-lint-recommended": "^1.0.0"
-  },
-  "dependencies": {
+    "remark-preset-lint-recommended": "^1.0.0",
     "bootstrap": "^3.3.7",
     "highlight.js": "^9.8.0"
   },
