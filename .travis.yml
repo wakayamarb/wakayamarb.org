@@ -31,7 +31,7 @@ script:
   - rm ./.*
   - rm bin/install-sketchtools.sh
   - rm bin/keygen.sh
-  - rm bin/screenshot.sh
+  - rm bin/screenshot.js
   - rm circle.yml
   - rm gulpfile.babel.js
   - rm id_ecdsa.*
