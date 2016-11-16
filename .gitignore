@@ -43,6 +43,7 @@ jspm_packages
 /bundle.js
 /.favicon-refs.html
 # /favicons/
+/fonts/
 
 # deploy keys
 /id_ecdsa
