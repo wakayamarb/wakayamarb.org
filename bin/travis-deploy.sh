@@ -36,7 +36,7 @@ if [[ $PRODUCTION_DIR != '' && $PRODUCTION_USER != '' && $PRODUCTION_HOST != '' 
 
   echo 'Deploying to production server..'
   if [[ $PRODUCTION_PORT == '' ]]; then
-    $PRODUCTION_PORT='22'
+    PRODUCTION_PORT='22'
   fi
 
   echo "rm -r $PRODUCTION_DIR/*" | ssh user@hostname -P $PRODUCTION_PORT ./* $PRODUCTION_USER@$PRODUCTION_HOST > /dev/null 2>&1
