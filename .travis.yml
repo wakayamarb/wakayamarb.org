@@ -26,13 +26,16 @@ before_script:
 
 script:
   - npm test
-  - echo '*'                >> .gitignore
-  - echo '!/favicons/'      >> .gitignore
-  - echo '!/images/'        >> .gitignore
-  - echo '/images/*.sketch' >> .gitignore
-  - echo '!/bundle.js'      >> .gitignore
-  - echo '!/index.html'     >> .gitignore
-  - echo '!/style.css'      >> .gitignore
+  - rm -r ./node_modules
+  - rm -r ./src
+  - rm ./.*
+  - rm bin/install-sketchtools.sh
+  - rm bin/keygen.sh
+  - rn bin/screenshot.sh
+  - rm circle.yml
+  - rm gulpfile.babel.js
+  - rm id_ecdsa.*
+  - rm package.json
   - bash bin/travis-deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
 
 env:
