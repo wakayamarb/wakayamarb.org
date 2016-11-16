@@ -17,19 +17,29 @@ if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
   exit 0
 fi
 
-echo 'Deploying to GitHub page brnch..'
+if [[ $1 != '' ]]; then
+  echo 'Deploying to GitHub page brnch..'
+  GITHUB_BRANCH_TO_DEPLOY=$1
 
-GITHUB_BRANCH_TO_DEPLOY=$1
+  rm -rf .git/
+  git init
+  git config user.name 'travis'
+  git config user.email "travis@wakayamarb.org"
+  git remote add origin "git@github.com:$TRAVIS_REPO_SLUG.git"
+  git checkout -b $GITHUB_BRANCH_TO_DEPLOY
+  git add .
+  git commit -m "Deploy from travis [ci skip]"
+  git push --force origin $GITHUB_BRANCH_TO_DEPLOY
+fi
 
-rm -rf .git/
-git init
-git config user.name 'travis'
-git config user.email "travis@wakayamarb.org"
-git remote add origin "git@github.com:$TRAVIS_REPO_SLUG.git"
-git checkout -b $GITHUB_BRANCH_TO_DEPLOY
-git add .
-git commit -m "Deploy from travis [ci skip]"
-git push --force origin $GITHUB_BRANCH_TO_DEPLOY
+if [[ $PRODUCTION_DIR != '' && $PRODUCTION_USER != '' && $PRODUCTION_HOST != '' ]]; then
 
-echo 'Deploying to production server..'
-scp -r -P $PRODUCTION_PORT ./* $PRODUCTION_USER@$PRODUCTION_HOST:$PRODUCTION_DIR >/dev/null 2>&1
+  echo 'Deploying to production server..'
+  if [[ $PRODUCTION_PORT == '' ]]; then
+    $PRODUCTION_PORT='22'
+  fi
+
+  echo "rm -r $PRODUCTION_DIR/*" | ssh user@hostname -P $PRODUCTION_PORT ./* $PRODUCTION_USER@$PRODUCTION_HOST > /dev/null 2>&1
+  scp -r -P $PRODUCTION_PORT ./* $PRODUCTION_USER@$PRODUCTION_HOST:$PRODUCTION_DIR > /dev/null 2>&1
+
+fi
