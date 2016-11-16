@@ -28,7 +28,11 @@ script:
   - npm test
   - rm -r ./node_modules
   - rm -r ./src
-  - rm ./.*
+  - rm ./.editorconfig
+  - rm ./.eslint*
+  - rm ./.gitignore
+  - rm ./.sass-lint.yml
+  - rm ./.travis.yml
   - rm bin/install-sketchtools.sh
   - rm bin/keygen.sh
   - rm bin/screenshot.js
