@@ -39,7 +39,13 @@ if [[ $PRODUCTION_DIR != '' && $PRODUCTION_USER != '' && $PRODUCTION_HOST != '' 
     PRODUCTION_PORT='22'
   fi
 
+  # delete files
   echo "rm -r $PRODUCTION_DIR/*" | ssh user@hostname -P $PRODUCTION_PORT ./* $PRODUCTION_USER@$PRODUCTION_HOST > /dev/null 2>&1
+
+  # refresh events.json
+  echo "doorkeeper" | ssh user@hostname -P $PRODUCTION_PORT ./* $PRODUCTION_USER@$PRODUCTION_HOST > /dev/null 2>&1
+
+  # copy files
   scp -r -P $PRODUCTION_PORT ./* $PRODUCTION_USER@$PRODUCTION_HOST:$PRODUCTION_DIR > /dev/null 2>&1
 
 fi

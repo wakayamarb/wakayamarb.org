@@ -37,6 +37,7 @@ script:
   - rm bin/keygen.sh
   - rm bin/screenshot.js
   - rm circle.yml
+  - rm events.json
   - rm gulpfile.babel.js
   - rm id_ecdsa.*
   - rm package.json
