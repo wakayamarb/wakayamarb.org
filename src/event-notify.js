@@ -1,7 +1,7 @@
 'use strict'
 import request from 'superagent'
 
-export default class DoorKeeper {
+export default class EventNotifier {
 
   constructor(events) {
     this.events = this._isArray(events) ? events : []
@@ -54,17 +54,22 @@ export default class DoorKeeper {
     Object.keys(map).map((key) => {
 
       const element = map[key]
-      const value = this.events[0].event[key]
 
       // parse data
-      values[key] = (this.events.length === 0) ?
+      const value = (this.events.length === 0) ?
         element.getAttribute(DEFAULT) :
-        value
+        this.events[0].event[key]
 
       // update
+      values[key] = value
       switch (key) {
       case 'starts_at':
-        element.innerHTML = new Date(value).toLocaleDateString()
+
+        if (new Date(value).getDay()) {
+          element.innerHTML = new Date(value).toLocaleDateString()
+        } else {
+          element.innerHTML = value
+        }
         break
 
       case 'public_url':

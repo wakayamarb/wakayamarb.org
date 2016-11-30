@@ -1,13 +1,13 @@
 'use strict'
 
 import { initHighlightingOnLoad as hilight } from 'highlight.js'
-import Doorkeeper from './doorkeeper.js'
+import EventNotifier from './event-notify.js'
 
 // enable code hilightening
 hilight()
 
-// doorkeeper API wrapper (https://www.doorkeeperhq.com/developer/api)
-new Doorkeeper()
+// EventNotifier
+new EventNotifier()
   .setURL('./events.json')
   .apply({
     title:      document.getElementById('next-event-title'),
