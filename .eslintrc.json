@@ -4,7 +4,8 @@
         "browser": true,
         "commonjs": true,
         "protractor": true,
-        "phantomjs": true
+        "phantomjs": true,
+        "mocha": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {

@@ -10,7 +10,7 @@
     "lint:es": "eslint ./src/*.js",
     "lint:md": "remark .",
     "lint": "npm run lint:sass && npm run lint:es && npm run lint:md",
-    "test": "ls ./style.css ./bundle.js",
+    "test": "mocha --compilers js:babel-core/register test/**/*.unit.js",
     "keygen": "bash ./bin/keygen.sh",
     "generate-favicons": "gulp favicons",
     "screenshot": "http-server -s & PS=$! && phantomjs ./bin/screenshot.js && kill $PS"
@@ -54,14 +54,16 @@
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "http-server": "^0.9.0",
+    "mocha": "^3.2.0",
     "phantomjs-prebuilt": "^2.1.13",
+    "remark-cli": "^2.1.0",
     "remark-lint": "^5.2.0",
+    "remark-preset-lint-recommended": "^1.0.0",
     "sass-lint": "^1.9.1",
+    "should": "^11.1.1",
     "streamqueue": "^1.1.1",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "remark-cli": "^2.1.0",
-    "remark-preset-lint-recommended": "^1.0.0"
+    "vinyl-source-stream": "^1.1.0"
   },
   "babel": {
     "presets": [

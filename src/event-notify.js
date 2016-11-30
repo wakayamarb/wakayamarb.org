@@ -23,11 +23,21 @@ export default class EventNotifier {
       request
         .get(url)
         .end((err, res) => {
-          if (!err && this._isArray(res.body)) {
-            this.events = res.body
+          if (!err) {
+
+            // case text response
+            if (Object.keys(res.body).length === 0) {
+              res.body = JSON.parse(res.text)
+            }
+
+            // set field
+            if (this._isArray(res.body)) {
+              this.events = res.body
+            }
           }
+
           if (typeof callback === 'function') {
-            callback(res.body)
+            callback(this.events)
           }
           resolved()
         })
@@ -35,10 +45,11 @@ export default class EventNotifier {
 
     return {
       // method chain wrapping promise-then
-      render: (map) => {
+      render: (map, callback) => {
         return promise.then(() => {
           new Promise((resolved) => {
-            this.render(map, resolved)
+            this.render(map, callback)
+            resolved()
           })
         }
       )}
