@@ -8,8 +8,8 @@ hilight()
 
 // EventNotifier
 new EventNotifier()
-  .setURL('./events.json')
-  .apply({
+  .getEvents('./events.json')
+  .render({
     title:      document.getElementById('next-event-title'),
     starts_at:  document.getElementById('next-event-date'),
     public_url: document.getElementById('next-event-link')

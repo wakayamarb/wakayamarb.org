@@ -5,3 +5,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin shadow-box {
+  border-radius: $radius-default;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .1);
+}

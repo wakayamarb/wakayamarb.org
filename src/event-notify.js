@@ -17,7 +17,7 @@ export default class EventNotifier {
   /**
    * http request to obtain event informations
    */
-  setURL(url) {
+  getEvents(url, callback) {
 
     const promise = new Promise(resolved => {
       request
@@ -26,16 +26,19 @@ export default class EventNotifier {
           if (!err && this._isArray(res.body)) {
             this.events = res.body
           }
+          if (typeof callback === 'function') {
+            callback(res.body)
+          }
           resolved()
         })
     })
 
     return {
       // method chain wrapping promise-then
-      apply: (map) => {
+      render: (map) => {
         return promise.then(() => {
           new Promise((resolved) => {
-            this._apply(map, resolved)
+            this.render(map, resolved)
           })
         }
       )}
@@ -46,7 +49,7 @@ export default class EventNotifier {
   /**
    * update DOM
    */
-  _apply(map, done) {
+  render(map, done) {
 
     let values = {}
     const DEFAULT = 'data-default'
