@@ -7,7 +7,7 @@ Website of local ruby community Wakayama.rb.
 -   [https://wakayamarb.github.io/wakayamarb.org/](https://wakayamarb.github.io/wakayamarb.org/)
 
 ## development
-OK >=Node.js: 4
+Ok = Node.js: 6
 
 ```
 $ git clone https://github.com/wakayamarb/wakayamarb.org.git
