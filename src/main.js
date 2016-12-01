@@ -8,8 +8,8 @@ hilight()
 
 // EventNotifier
 new EventNotifier()
-  .getEvents('//wakayamarb.org/events.json')
-  // .getEvents('./events-sample.json') // for test
+  // .getEvents('//wakayamarb.org/events.json')
+  .getEvents('./events-sample.json') // for test
   .render({
     title:      document.getElementById('next-event-title'),
     starts_at:  document.getElementById('next-event-date'),

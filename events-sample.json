@@ -1,41 +1,22 @@
 [
     {
         "event": {
-            "title": "ダミーイベント1",
-            "id": 54195,
-            "starts_at": "2016-12-10T03:30:00.000Z",
-            "ends_at": "2016-12-10T09:00:00.000Z",
-            "venue_name": "ああああ",
-            "address": "address1",
-            "lat": "34.000",
-            "long": "135.001",
-            "ticket_limit": 40,
-            "published_at": "2016-11-19T01:02:33.193Z",
-            "updated_at": "2016-11-29T09:16:34.947Z",
-            "group": 6807,
-            "description": "概要です１",
-            "public_url": "https://wakayamarb.doorkeeper.jp/events/54195",
-            "participants": 40,
-            "waitlisted": 9
-        }
-    },
-    {
-        "event": {
-            "title": "ダミーイベント2",
-            "id": 54195,
-            "starts_at": "2016-12-29T09:00:00.000Z",
-            "ends_at": "2016-12-29T11:00:00.000Z",
-            "venue_name": "aaa",
-            "address": "address2",
-            "lat": "34.501",
-            "long": "135.502",
-            "ticket_limit": 8,
-            "published_at": "2016-11-15T14:39:46.917Z",
-            "updated_at": "2016-11-15T15:02:35.947Z",
-            "group": 6807,
-            "description": "概要です２",
-            "public_url": "https://wakayamarb.doorkeeper.jp/events/54195",
-            "participants": 1,
+            "title": "Ruby勉強会@和歌山 #40",
+            "id": 54906,
+            "starts_at": "2016-12-11T04:00:00.000Z",
+            "ends_at": "2016-12-11T09:00:00.000Z",
+            "venue_name": "株式会社正和情報サービス 2階会議室",
+            "address": "〒640-8226 和歌山県和歌山市小人町6番地",
+            "lat": "34.2306520595458",
+            "long": "135.1676895618766",
+            "ticket_limit": 10,
+            "published_at": "2016-12-01T15:51:15.219Z",
+            "updated_at": "2016-12-01T16:00:30.177Z",
+            "group": 1890,
+            "banner": "https://dzpp79ucibp5a.cloudfront.net/events_banners/54906_normal_1480497204_photo.jpg",
+            "description": "<h4>募集内容</h4>\n\n<p> Rubyを勉強したい方、Rubyを楽しみたい方を募集しています。mrubyボードの自作も行っていますので、RubyとIoTに興味のある方も是非お越しください。最近ではWiFiボードやIchigoJamも触ったりしています。</p>\n\n<h4>イベント内容</h4>\n\n<p> イベントの内容的には、みんなで集まってRubyやRails、またはmrubyについて、もくもくと勉強するものです。wakayamarb.orgサーバにユーザを作りまして、Railsの実践勉強もできたりします。<br>\n 勉強していてわからないことがあれば、周りのメンバーに気軽に聞いて、お互いに理解しあいましょう。<br>\n まだ、運営も不慣れなので、みんなで助け合って進めてもらえたら嬉しいです。<br>\n<strong> できましたら、テーブルタップなどのケーブルも持って来ていただければ嬉しいです。</strong></p>\n\n<h4>スケジュール</h4>\n\n<table><thead>\n<tr>\n<th>時 間</th>\n<th>内  容</th>\n</tr>\n</thead><tbody>\n<tr>\n<td>13:00～13:15   </td>\n<td>1分の自己紹介タイム。 自分のやりたいことや聞きたいことがあれば、みんなに伝えてください。</td>\n</tr>\n<tr>\n<td>13:15～13:30</td>\n<td>Wakayama.rbの活動近況報告, 「GR-CITRUSにMP3クラス実装の話」「第9回フクオカRuby大賞応募内容」</td>\n</tr>\n<tr>\n<td>13:30～13:40</td>\n<td>wakayamarb.orgサーバの現在の状況について</td>\n</tr>\n<tr>\n<td>13:40～14:30</td>\n<td>JavaScriptの勉強会#2 鎌田さん</td>\n</tr>\n<tr>\n<td>14:30～17:45</td>\n<td>もくもく勉強会。</td>\n</tr>\n<tr>\n<td>17:45～17:55</td>\n<td>1分成果報告</td>\n</tr>\n<tr>\n<td>17:55～18:00</td>\n<td>後片付け。ゴミは持ち帰りましょう。</td>\n</tr>\n</tbody></table>\n\n<h4>会場への入り方</h4>\n\n<p>入り口がオートロックとなっています。玄関脇のインターフォンで呼んでください。中からロックを解除します。</p>\n\n<h4>お願いなど</h4>\n\n<ul>\n<li>駐車場は6台分借りられることになりました。駐車スペースは南側(裏側)詰めて6台分です。</li>\n<li>止められなかった方は、近くのコインパーキングをお使いください。正和情報さんの真裏にコインパーキングがあります。</li>\n<li>電車の方は和歌山市駅から徒歩10分くらいです。</li>\n<li>最寄のバス停は、小人町停留所から3分、または城北橋停留所から3分です。</li>\n<li>電源が限られているので、各自テーブルタップなどを持参してもらえると嬉しいです。</li>\n</ul>\n\n<h4>こんなことは教えられそうです・・・</h4>\n\n<ul>\n<li>rubyの基礎</li>\n<li>mrubyについて</li>\n<li>ソフトウェアの知識全般</li>\n</ul>",
+            "public_url": "https://wakayamarb.doorkeeper.jp/events/54906",
+            "participants": 2,
             "waitlisted": 0
         }
     }

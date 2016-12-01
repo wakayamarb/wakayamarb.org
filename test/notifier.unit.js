@@ -99,7 +99,7 @@ describe('test of Notifier class', () => {
         })
     })
 
-    it('should useful with callback', done => {
+    it('should be work with callback', done => {
       const url = 'https://gist.githubusercontent.com/KamataRyo/cd7729398191e0927c7134a4b5dce600/raw/3e9b046d73fa2ea2d3cfd533bf8204d0ad5e22a3/dummyevents.json'
 
       const [titleElement, dateElement, urlElement] = [

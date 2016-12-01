@@ -1,4 +1,5 @@
 'use strict'
+import moment from 'moment'
 
 const DEFAULT = 'data-default'
 
@@ -13,7 +14,7 @@ const renderer = {
   },
 
   'starts_at': (element, value) => {
-    if (value && new Date(value).getDay()) {
+    if (value && moment(value).isValid()) {
       element.innerHTML = new Date(value).toLocaleDateString()
     } else {
       element.innerHTML = element.getAttribute(DEFAULT)
