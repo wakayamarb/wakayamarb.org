@@ -2,19 +2,19 @@
 
   // margins definition
   &:first-child {
-    margin-top: $setion-margin-unit;
+    margin-top: $section-margin-unit;
   }
 
-  margin-top: $setion-margin-unit * 2;
-  margin-bottom: $setion-margin-unit * 2;
+  margin-top: $section-margin-unit * 2;
+  margin-bottom: $section-margin-unit * 2;
 
   &:last-child {
-    margin-bottom: $setion-margin-unit;
+    margin-bottom: $section-margin-unit;
   }
 
   .section-content {
-    margin-top: $setion-margin-unit / 2;
-    padding: 0 ($setion-margin-unit / 2);
+    margin-top: $section-margin-unit / 2;
+    padding: 0 ($section-margin-unit / 2);
   }
 
   .section-banar-image {
@@ -26,7 +26,7 @@
 
 
   .button-join {
-    bottom: $setion-margin-unit;
+    bottom: $section-margin-unit;
   }
 
   .schedule-box {
@@ -34,14 +34,14 @@
     width: 100%;
     max-width: 300px;
     height: 300px;
-    margin: $setion-margin-unit auto;
+    margin: $section-margin-unit auto;
     padding: 1em;
   }
 }
 
 .button {
   display: inline-block;
-  margin: $setion-margin-unit auto;
+  margin: $section-margin-unit auto;
   padding: .7em 1em .4em;
   border-radius: $radius-default * 2;
   background-color: $color-primary;
@@ -50,5 +50,7 @@
 
   &:hover {
     background-color: darken($color-primary, 30%);
+    color: $color-background;
+    text-decoration: none;
   }
 }
