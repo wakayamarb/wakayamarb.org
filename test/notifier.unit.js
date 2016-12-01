@@ -44,7 +44,6 @@ describe('test of Notifier class', () => {
       getAttribute(key) { return this.attrs[key] }
       setAttribute(key, value) { this.attrs[key] = value }
     }
-    let url
     // default values
     const [titleDefault, dateDefault, urlDefault] = [
       'the title',

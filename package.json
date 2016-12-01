@@ -36,6 +36,7 @@
   "homepage": "https://github.com/wakayamarb/wakayamarb.org#readme",
   "devDependencies": {
     "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
     "babel-preset-es2015": "^6.18.0",
     "babel-register": "^6.18.0",
     "babelify": "^7.3.0",
