@@ -10,7 +10,7 @@
     "lint:es": "eslint ./src/*.js",
     "lint:md": "remark .",
     "lint": "npm run lint:sass && npm run lint:es && npm run lint:md",
-    "test": "mocha --compilers js:babel-core/register test/**/*.unit.js",
+    "test": "mocha --harmony --compilers js:babel-core/register test/**/*.unit.js",
     "keygen": "bash ./bin/keygen.sh",
     "generate-favicons": "gulp favicons",
     "screenshot": "http-server -s & PS=$! && phantomjs ./bin/screenshot.js && kill $PS"
