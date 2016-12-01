@@ -12,3 +12,5 @@ test:
     - npm test
     - nvm alias default 6
     - npm test
+    - nvm alias default 7
+    - npm test

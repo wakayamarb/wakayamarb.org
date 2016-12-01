@@ -7,6 +7,7 @@ language:
 node_js:
   - '4'
   - '6'
+  - '7'
 
 branches:
   only:
@@ -34,14 +35,14 @@ script:
   - rm ./.gitignore
   - rm ./.sass-lint.yml
   - rm ./.travis.yml
-  - rm bin/install-sketchtools.sh
-  - rm bin/keygen.sh
-  - rm bin/screenshot.js
-  - rm circle.yml
-  - rm events.json
-  - rm gulpfile.babel.js
-  - rm id_ecdsa.*
-  - rm package.json
+  - rm ./bin/install-sketchtools.sh
+  - rm ./bin/keygen.sh
+  - rm ./bin/screenshot.js
+  - rm ./circle.yml
+  - rm ./events-sample.json
+  - rm ./gulpfile.babel.js
+  - rm ./id_ecdsa.*
+  - rm ./package.json
   - bash bin/travis-deploy.sh "gh-pages" "$TRAVIS_NODE_VERSION" "6"
 
 env:
