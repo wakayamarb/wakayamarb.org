@@ -1,5 +1,6 @@
 'use strict'
 import request from 'superagent'
+import renderer from './event-notify-renderer'
 
 export default class EventNotifier {
 
@@ -60,39 +61,16 @@ export default class EventNotifier {
   /**
    * update DOM
    */
-  render(map, done) {
+  render(elements, done) {
 
-    let values = {}
-    const DEFAULT = 'data-default'
+    Object.keys(elements).map((key) => {
 
-    Object.keys(map).map((key) => {
-
-      const element = map[key]
-
-      // parse data
-      const value = (this.events.length === 0) ?
-        element.getAttribute(DEFAULT) :
-        this.events[0].event[key]
+      const element = elements[key]
+      // Bool(false) with no event
+      const value = (this.events.length !== 0) && this.events[0].event[key]
 
       // update
-      values[key] = value
-      switch (key) {
-      case 'starts_at':
-
-        if (new Date(value).getDay()) {
-          element.innerHTML = new Date(value).toLocaleDateString()
-        } else {
-          element.innerHTML = value
-        }
-        break
-
-      case 'public_url':
-        element.setAttribute('href', value)
-        break
-
-      default:
-        element.innerHTML = value
-      }
+      renderer[key].render(element, value)
     })
 
     if (typeof done === 'function') { done() }

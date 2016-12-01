@@ -20,7 +20,11 @@ import browserSync  from 'browser-sync'
 import meta from './package.json'
 
 const styles         = ['./src/*.scss']
-const scripts        = ['./src/main.js', './src/event-notify.js']
+const scripts        = [
+  './src/main.js',
+  './src/event-notify.js',
+  './src/event-notify-renderer.js'
+]
 const bootstrapEntry = ['./src/bootstrap-custom.less']
 const externalStyles = ['./node_modules/highlight.js/styles/default.css']
 const faviconsSrc    = ['./images/logo.sketch']
