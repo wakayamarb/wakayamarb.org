@@ -28,6 +28,7 @@ script:
   - npm test
   - rm -r ./node_modules
   - rm -r ./src
+  - rm -r ./test
   - rm ./.editorconfig
   - rm ./.eslint*
   - rm ./.gitignore
