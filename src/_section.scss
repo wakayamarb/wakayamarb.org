@@ -13,8 +13,8 @@
   }
 
   .section-content {
-    margin-top: $section-margin-unit / 2;
-    padding: 0 ($section-margin-unit / 2);
+    margin-top: calc($section-margin-unit / 2);
+    padding: 0 calc($section-margin-unit / 2);
   }
 
   .section-banar-image {

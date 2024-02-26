@@ -1,23 +1,27 @@
 'use strict'
-import gulp         from 'gulp'
-import autoprefixer from 'gulp-autoprefixer'
-import concat       from 'gulp-concat'
-import less         from 'gulp-less'
-import minify       from 'gulp-clean-css'
-import plumber      from 'gulp-plumber'
-import sass         from 'gulp-sass'
-import sourcemaps   from 'gulp-sourcemaps'
-import uglify       from 'gulp-uglify'
-import sketch       from 'gulp-sketch'
-import favicons     from 'gulp-favicons'
-import browserify   from 'browserify'
-import babelify     from 'babelify'
-import streamqueue  from 'streamqueue'
-import source       from 'vinyl-source-stream'
-import buffer       from 'vinyl-buffer'
-import browserSync  from 'browser-sync'
+import gulp              from 'gulp'
+import autoprefixer      from 'gulp-autoprefixer'
+import concat            from 'gulp-concat'
+import less              from 'gulp-less'
+import minify            from 'gulp-clean-css'
+import plumber           from 'gulp-plumber'
+import * as sassCompiler from 'sass'
+import gulpSass          from 'gulp-sass'
+import sourcemaps        from 'gulp-sourcemaps'
+import uglify            from 'gulp-uglify'
+import sketch            from 'gulp-sketch'
+import favicons          from 'gulp-favicons'
+import browserify        from 'browserify'
+import babelify          from 'babelify'
+import streamqueue       from 'streamqueue'
+import source            from 'vinyl-source-stream'
+import buffer            from 'vinyl-buffer'
+import browserSync       from 'browser-sync'
 
-import meta from './package.json'
+const sass = gulpSass(sassCompiler)
+
+import fs from 'fs'
+const meta = JSON.parse(fs.readFileSync('./package.json', 'utf8'))
 
 const styles         = ['./src/*.scss']
 const scripts        = [
@@ -29,7 +33,7 @@ const bootstrapEntry = ['./src/bootstrap-custom.less']
 const externalStyles = ['./node_modules/highlight.js/styles/default.css']
 const faviconsSrc    = ['./images/logo.sketch']
 
-gulp.task('css:dev', () => {
+gulp.task('css:dev', (done) => {
 
   streamqueue(
     { objectMode: true },
@@ -44,21 +48,22 @@ gulp.task('css:dev', () => {
       .pipe(sourcemaps.init())
       .pipe(sass()),
 
-      gulp.src(externalStyles)
+    gulp.src(externalStyles)
       .pipe(plumber())
       .pipe(sourcemaps.init())
   )
     .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
       cascade: false
     }))
     .pipe(concat('style.css'))
     .pipe(minify({ keepSpecialComments: 1 }))
     .pipe(sourcemaps.write('./maps/'))
     .pipe(gulp.dest('./'))
+
+  done()
 })
 
-gulp.task('css:prod', () => {
+gulp.task('css:prod', (done) => {
 
   streamqueue(
     { objectMode: true },
@@ -72,33 +77,38 @@ gulp.task('css:prod', () => {
     gulp.src(externalStyles)
   )
     .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
       cascade: false
     }))
     .pipe(concat('style.css'))
     .pipe(minify({ keepSpecialComments: 1 }))
     .pipe(gulp.dest('./'))
+
+  done()
 })
 
-gulp.task('js:dev', () => {
+gulp.task('js:dev', (done) => {
   browserify({ entries: scripts })
     .transform([babelify])
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./'))
+
+  done()
 })
 
-gulp.task('js:prod', () => {
+gulp.task('js:prod', (done) => {
   browserify({ entries: scripts })
     .transform([babelify])
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
-    .pipe(uglify({ preserveComments: true }))
+    .pipe(uglify({ output: { comments: /^!/ } }))
     .pipe(gulp.dest('./'))
+
+  done()
 })
 
-gulp.task('favicons', () => {
+gulp.task('favicons', (done) => {
   gulp.src(faviconsSrc)
     .pipe(sketch({
       export: 'slices',
@@ -125,20 +135,20 @@ gulp.task('favicons', () => {
         android: true,              // Create Android homescreen icon. `boolean`
         appleIcon: true,            // Create Apple touch icons. `boolean` or `{ offset: offsetInPercentage }`
         appleStartup: false,         // Create Apple startup images. `boolean`
-        coast: { offset: 25 },      // Create Opera Coast icon with offset 25%. `boolean` or `{ offset: offsetInPercentage }`
         favicons: true,             // Create regular favicons. `boolean`
-        firefox: true,              // Create Firefox OS icons. `boolean` or `{ offset: offsetInPercentage }`
         windows: true,              // Create Windows 8 tile icons. `boolean`
         yandex: true                // Create Yandex browser icon. `boolean`
       }
     }))
     .pipe(gulp.dest('./favicons/'))
+
+  done()
 })
 
-gulp.task('build', ['css:prod', 'js:prod'])
-gulp.task('build:dev', ['css:dev', 'js:dev'])
+gulp.task('build', gulp.parallel('css:prod', 'js:prod'))
+gulp.task('build:dev', gulp.parallel('css:dev', 'js:dev'))
 
-gulp.task('start', ['build:dev'], () => {
+gulp.task('start', gulp.task('build:dev'), () => {
   browserSync.init({ server: { baseDir: './' } })
   gulp.watch(bootstrapEntry, ['css:dev'])
   gulp.watch(styles,  ['css:dev'])
