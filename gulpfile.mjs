@@ -58,7 +58,7 @@ gulp.task('css:dev', (done) => {
     .pipe(concat('style.css'))
     .pipe(minify({ keepSpecialComments: 1 }))
     .pipe(sourcemaps.write('./maps/'))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./dest/'))
 
   done()
 })
@@ -81,7 +81,7 @@ gulp.task('css:prod', (done) => {
     }))
     .pipe(concat('style.css'))
     .pipe(minify({ keepSpecialComments: 1 }))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./dest/'))
 
   done()
 })
@@ -91,7 +91,7 @@ gulp.task('js:dev', (done) => {
     .transform([babelify])
     .bundle()
     .pipe(source('bundle.js'))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./dest/'))
 
   done()
 })
@@ -103,7 +103,7 @@ gulp.task('js:prod', (done) => {
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(uglify({ output: { comments: /^!/ } }))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./dest/'))
 
   done()
 })
@@ -140,7 +140,7 @@ gulp.task('favicons', (done) => {
         yandex: true                // Create Yandex browser icon. `boolean`
       }
     }))
-    .pipe(gulp.dest('./favicons/'))
+    .pipe(gulp.dest('./dest/'))
 
   done()
 })
