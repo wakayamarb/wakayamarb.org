@@ -1,14 +1,15 @@
 'use strict'
 
-import { initHighlightingOnLoad as hilight } from 'highlight.js'
+import { highlightAll } from 'highlight.js'
 import EventNotifier from './event-notify.js'
 
 // enable code hilightening
-hilight()
+highlightAll()
 
 // EventNotifier
 new EventNotifier()
-  .getEvents('//wakayamarb.org/events.json')
+  .getEvents('./events.json')
+  // .getEvents('//wakayamarb.org/events.json')
   // .getEvents('./events-sample.json') // for test
   .render({
     title:      document.getElementById('next-event-title'),

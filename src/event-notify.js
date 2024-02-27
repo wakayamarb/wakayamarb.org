@@ -53,7 +53,7 @@ export default class EventNotifier {
             resolved()
           })
         }
-      )}
+        )}
     }
 
   }

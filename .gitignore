@@ -51,3 +51,5 @@ LICENSE
 /id_rsa
 /id_ecdsa.pub
 /id_rsa.pub
+
+/dest/events.json

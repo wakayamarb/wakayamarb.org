@@ -4,7 +4,8 @@
   "description": "Website of Wakayama.rb",
   "main": "index.html",
   "scripts": {
-    "build": "gulp build --verbose && cp ./index.html ./dest/index.html && cp -r ./images ./dest/images",
+    "build:doorkeeper": "curl -sL https://api.doorkeeper.jp/groups/wakayamarb/events > ./dest/events.json",
+    "build": "gulp build --verbose && cp ./index.html ./dest/index.html && cp -r ./images ./dest/images && npm run build:doorkeeper",
     "start": "gulp start",
     "lint:sass": "sass-lint",
     "lint:es": "eslint ./src/*.js",
