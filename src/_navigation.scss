@@ -4,7 +4,7 @@
   width: $circle-icon-radius;
   height: $circle-icon-radius;
   margin: $circle-icon-margin auto;
-  border-radius: $circle-icon-radius / 2;
+  border-radius: calc($circle-icon-radius / 2);
   background-color: $color-primary;
   color: $color-background;
 
